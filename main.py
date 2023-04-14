@@ -23,12 +23,68 @@ class HBaseSimulator:
 
     def execute_command(self):
         command = self.input_entry.get()
+        
+        if command == 'clear':
+            self.output_text.delete('1.0', tk.END)
+
         # Aquí podrías procesar el comando y obtener los resultados
         # En este ejemplo, simplemente lo mostraremos en la pantalla
         prueba = None
         with open("./HFile.json") as archivo:
+            # Se leen Regions con HFiles
             prueba = json.load(archivo)
-            print(prueba)
+
+            cs = command.split(" ")
+            cm = cs[0].lower() # Comando Separado
+            print(cm)
+
+            if(cm == "create"):
+                pass
+
+            elif(cm == "list"):
+                pass  
+
+            elif(cm == "disable"):
+                pass  
+            
+            elif(cm == "isEnabled"):
+                pass  
+            
+            elif(cm == "alter"):
+                pass  
+
+            elif (cm == "drop"):
+                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+
+            elif (cm == "drop_all"):
+                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+
+            elif (cm == "describe"):
+                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+
+            elif (cm == "put"):
+                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+
+            elif (cm == "get"):
+                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+
+            elif (cm == "scan"):
+                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+
+            elif (cm == "delete"):
+                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+                
+            elif (cm == "delete_all"):
+                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+
+            elif (cm == "count"):
+                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+                
+            elif (cm == "truncate"):
+                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+
+            else:
+                self.output_text.insert(tk.END, "Comando desconocido" +"\n")
         
 if __name__ == "__main__":
     hbase_simulator = HBaseSimulator()
