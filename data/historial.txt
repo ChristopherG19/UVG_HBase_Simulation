@@ -200,3 +200,10 @@ Comandos ingresados:
 -----------------------
 Comandos ingresados:
 2023/04/15 13:20:36: get 'Employees', 1
+-----------------------
+Comandos ingresados:
+2023/04/15 13:35:00: count
+2023/04/15 13:35:13: count 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 13:35:52: count 'Employees'
