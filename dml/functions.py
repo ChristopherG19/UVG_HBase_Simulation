@@ -86,9 +86,9 @@ def put(command, data):
         }
 
 
-    newdata_string = json.dumps(data)
+    data_string = json.dumps(data)
 
-    return (newdata_string, region, tableName, rowID, colFam, colName)
+    return (data_string)
 
 def get(command, data):
     start_time = time.time()

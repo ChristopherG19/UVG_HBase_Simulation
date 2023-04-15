@@ -113,13 +113,8 @@ class HBaseSimulator:
                 start_time = time.time()
                 commandOutput = ""
 
-                newData, region, tableName, rowID, colFam, colName = put(command, data)
-
+                newData = put(command, data)
                 data = json.loads(newData)
-
-                # data[region][tableName]["rows"][rowID][colFam][colName] = newData
-                # data[region][tableName]["timestamp"] = time.time() * 10000
-                
 
                 with open(self.db, 'w') as f:
                     json.dump(data, f, indent= 4)
