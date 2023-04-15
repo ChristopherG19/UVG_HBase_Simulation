@@ -6,20 +6,23 @@
             "rows": {
                 "1": {
                     "Column Families": {
-                        "Column qualifiers": {
-                            "Timestamp1": "value"
+                        "Column name": {
+                            "Timestamp": "value", 
+                            "value": "valor"
                         },
-                        "Column qualifiers2": {
-                            "Timestamp1": "value",
-                            "Timestamp2": "value2"
+                        "Column name2": {
+                            "Timestamp": "value", 
+                            "value": "valor"
                         }
                     },
                     "Column Families2": {
-                        "Column qualifiers3": {
-                            "Timestamp1": "value3"
+                        "Column name3": {
+                            "Timestamp": "value3", 
+                            "value": "valor"
                         },
-                        "Column qualifiers4": {
-                            "Timestamp2": "value"
+                        "Column name4": {
+                            "Timestamp": "value", 
+                            "value": "valor"
                         }
                     }
                 }

@@ -42,6 +42,7 @@ def put(command, data):
     
  
     end_time = time.time()
+    ret+= "\n"
     ret += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
     return ret
 
@@ -61,23 +62,52 @@ def get(command, data):
     try:
         arguments = command[1].strip().split(",")
 
-        tableName = arguments[0]
+        tableName = arguments[0].strip().strip("'")
         print(tableName)
 
-        rowID = arguments[1]
+        rowID = arguments[1].strip().strip("'")
         print(rowID)
-
-    # TODO: real put
-
-    # if enabled
-    # else: return "Tabla no está hablitada"
-
 
     except:
         return "Sintaxis inválida: Argumentos faltantes \n"
+    
 
+    # conseguir region
+    region = ""
+
+    for x in data:
+        for y in data[x]:
+            if y == tableName:
+                region = x 
+
+    print("region: " + region)
+
+    # Verificar existencia de tabla
+    if region == "":
+        return "La tabla no existe\n"
+
+    # verificar disponilbilidad
+    if data[region][tableName]["enabled"] != "True":
+        return "La tabla no está disponible\t"
+    
+    # verificar existencia del row
+    try:
+        data[region][tableName]["rows"][rowID]
+    except:
+        return "La row ID ingresada no existe \n"
+    
+    ret += "COLUMN\t\t\tCELL\n"
+    
+    for columnFamily in data[region][tableName]["rows"][rowID]:
+        for columnName in data[region][tableName]["rows"][rowID][columnFamily]:
+            cantFilas += 1
+            ret += columnFamily + ":" + columnName +\
+            "\ttimestamp=" + data[region][tableName]["rows"][rowID][columnFamily][columnName]["Timestamp"] +\
+            ", value=" + data[region][tableName]["rows"][rowID][columnFamily][columnName]["value"] +\
+            "\n"
 
     end_time = time.time()
+    ret+= "\n"
     ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
     return ret
 
@@ -95,8 +125,6 @@ def scan(command, data):
         return "scan '<table name>\n"
 
     ret += "ROW\t\tCOLUMN+CELL\n"
-
-    # TODO: real scan
 
     # conseguir region
     region = ""
@@ -126,6 +154,7 @@ def scan(command, data):
                 "\n"
 
     end_time = time.time()
+    ret+= "\n"
     ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
     return ret
 
@@ -168,6 +197,7 @@ def delete(command, data):
     
 
     end_time = time.time()
+    ret+= "\n"
     ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
     return ret
 
@@ -204,6 +234,7 @@ def deleteAll(command, data):
     # else: return "Tabla no está hablitada"
 
     end_time = time.time()
+    ret+= "\n"
     ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos\n"
     return ret
 
@@ -226,6 +257,7 @@ def countF(command, data):
 
 
     end_time = time.time()
+    ret+= "\n"
     ret += "1 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
     return ret
 
@@ -248,5 +280,6 @@ def truncate(command, data):
 
 
     end_time = time.time()
+    ret+= "\n"
     ret += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
     return ret
