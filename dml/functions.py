@@ -1,8 +1,7 @@
 import time
+import json
 
 def put(command, data):
-    start_time = time.time()
-    ret = ""
 
     try:
         # conseguimos los atributos del commando
@@ -16,35 +15,80 @@ def put(command, data):
         arguments = command[1].split(",")
 
         # Conseguimos cada uno de los atributos
-        tableName = arguments[0].strip()
+        tableName = arguments[0].strip().strip("'")
         print(tableName)
-        rowID = arguments[1].strip()
+        rowID = arguments[1].strip().strip("'")
         print(rowID)
         info = arguments[2].strip().strip("'")
         print(info)
 
         col = info.split(":")
-        colFam = col[0]
+        colFam = col[0].strip().strip("'")
         print(colFam)
-        colName = col[1]
+        colName = col[1].strip().strip("'")
         print(colName)
 
-        value = info[0]
+        value = arguments[3].strip().strip("'")
         print(value)
 
     except:
         return "Sintaxis inválida: Argumentos faltantes \n"
     
-    # TODO: real put
+    # conseguir region
+    region = ""
 
-    # if enabled
-    # else: return "Tabla no está hablitada"
+    for x in data:
+        for y in data[x]:
+            if y == tableName:
+                region = x 
+
+    print("region: " + region)
+
+    # Verificar existencia de tabla
+    if region == "":
+        return "La tabla no existe\n"
+
+    # verificar disponilbilidad
+    if data[region][tableName]["enabled"] != "True":
+        return "La tabla no está disponible\t"
     
- 
-    end_time = time.time()
-    ret+= "\n"
-    ret += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
-    return ret
+    # verificar si existe rowID
+    try:
+        data[region][tableName]["rows"][rowID]
+
+        # verificar si existe la column family
+        try: 
+            data[region][tableName]["rows"][rowID][colFam]
+
+            data[region][tableName]["rows"][rowID][colFam][colName] = {
+                "Timestamp": time.time(),
+                "value": value
+            }
+        
+        except:
+            # no existe
+            data[region][tableName]["rows"][rowID][colFam] = {
+                colName: {
+                    "Timestamp": time.time() * 1000,
+                    "value": value
+                }
+            }
+
+    except:
+        # no existe rowID
+        data[region][tableName]["rows"][rowID] = {
+            colFam: {
+                colName: {
+                    "Timestamp": time.time() * 1000,
+                    "value": value
+                }
+            }
+        }
+
+
+    newdata_string = json.dumps(data)
+
+    return (newdata_string, region, tableName, rowID, colFam, colName)
 
 def get(command, data):
     start_time = time.time()

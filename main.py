@@ -110,7 +110,24 @@ class HBaseSimulator:
                 self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
 
             elif (cm == "put"):
-                commandOutput = put(command, data)
+                start_time = time.time()
+                commandOutput = ""
+
+                newData, region, tableName, rowID, colFam, colName = put(command, data)
+
+                data = json.loads(newData)
+
+                # data[region][tableName]["rows"][rowID][colFam][colName] = newData
+                # data[region][tableName]["timestamp"] = time.time() * 10000
+                
+
+                with open(self.db, 'w') as f:
+                    json.dump(data, f, indent= 4)
+
+                end_time = time.time()
+                commandOutput+= "\n"
+                commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+
                 self.output_text.insert(tk.END, commandOutput)
 
             elif (cm == "get"):

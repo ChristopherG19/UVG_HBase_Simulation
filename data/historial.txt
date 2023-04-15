@@ -207,3 +207,130 @@ Comandos ingresados:
 -----------------------
 Comandos ingresados:
 2023/04/15 13:35:52: count 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 15:35:05: put
+2023/04/15 15:35:17: get
+2023/04/15 15:35:37: pu 
+2023/04/15 15:35:39: put
+-----------------------
+Comandos ingresados:
+2023/04/15 15:36:44: put
+2023/04/15 15:41:17: scan
+2023/04/15 15:41:23: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 15:42:10: put
+-----------------------
+Comandos ingresados:
+2023/04/15 15:56:19: put
+-----------------------
+Comandos ingresados:
+2023/04/15 15:56:40: put
+-----------------------
+Comandos ingresados:
+2023/04/15 15:58:27: put
+-----------------------
+Comandos ingresados:
+2023/04/15 15:59:08: put
+-----------------------
+Comandos ingresados:
+2023/04/15 15:59:20: put
+2023/04/15 15:59:22: put
+2023/04/15 15:59:23: put
+2023/04/15 15:59:23: put
+2023/04/15 15:59:24: put
+2023/04/15 15:59:25: put
+2023/04/15 15:59:26: put
+2023/04/15 15:59:28: put
+-----------------------
+Comandos ingresados:
+2023/04/15 16:01:13: put
+2023/04/15 16:01:58: put 'Employee', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:03:38: put 'Employee', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:03:41: put 'Employee', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:03:43: put
+2023/04/15 16:03:57: put 'Employee', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:04:55: put 'Employee', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:05:47: 'Employee', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:05:57: put 'Employee', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:06:19: put 'Employees', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:08:28: put 'Employee', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:08:41: 'Employees', '2', 'nmm:mmn', 'lol
+-----------------------
+Comandos ingresados:
+2023/04/15 16:09:47: 'Employees', '2', 'nmm:mmn', 'lol
+-----------------------
+Comandos ingresados:
+2023/04/15 16:10:19: 'Employees', '2', 'nmm:mmn', 'lol
+2023/04/15 16:10:39: put 'Employees', '2', 'nmm:mmn', 'lol
+2023/04/15 16:10:52: put 'Employees', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:15:49: put 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:18:35: put 'Employees', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:18:59: put 'Employees', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:21:26: put 'Employees', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:25:32: 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:25:42: put 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:26:07: put 'Employees', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:27:08: put 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:27:37: put 'Employees', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:34:06: put 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:34:14: put 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:36:13: put 'Employees', '2', 'nmm:xd', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:37:42: put 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:37:59: put 'Employees', '2', 'nose:mmn', 'lol'
+2023/04/15 16:39:21: put 'Employees', '2', 'nmms:mmn', 'lol'
+2023/04/15 16:39:30: put 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:39:41: put 'Employees', '2', 'nmm:pero, 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:41:01: put 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:41:19: put 'Employees', '3', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:44:29: put 'Employees', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:45:10: put 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:45:18: 
+-----------------------
+Comandos ingresados:
+2023/04/15 16:52:16: put 'Employees', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:58:14: 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 16:58:21: put 'Employees', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:58:52: put 'Employees', '2', 'nmm:mmn', 'xd'
+2023/04/15 16:59:11: put 'Employees', '3', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 16:59:52: put 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 17:00:02: put 'Employees', '3', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 17:00:40: put 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 17:00:53: put 'Employees', '3', 'nmm:mmn', 'lol'
