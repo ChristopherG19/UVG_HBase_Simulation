@@ -32,25 +32,36 @@
             "timestamp": "fdja\u00c3\u00b1lfjd",
             "rows": {
                 "1": {
-                    "Column Families": {
-                        "Column qualifiers": {
-                            "Timestamp1": "value"
+                    "Column_Families": {
+                        "Column_qualifiers": {
+                            "Timestamp": "value", 
+                            "value": "valor"
                         },
-                        "Column qualifiers2": {
-                            "Timestamp1": "value",
-                            "Timestamp2": "value2"
+                        "Column_qualifiers2": {
+                            "Timestamp": "value",
+                            "value": "valor"
                         }
                     },
-                    "Column Families2": {
-                        "Column qualifiers3": {
-                            "Timestamp1": "value3"
+                    "Column_Families2": {
+                        "Column_qualifiers3": {
+                            "Timestamp": "value3",
+                            "value": "valor"
                         },
-                        "Column qualifiers4": {
-                            "Timestamp2": "value"
+                        "Column_qualifiers4": {
+                            "Timestamp": "value",
+                            "value": "valor"
                         }
                     }
                 }
             }
+        }
+    },
+    "Region3" : {
+        "Tabla3": {
+            "enabled":"False",
+            "timestamp": "ddd",
+            "rows" : {}
+            
         }
     }
 }

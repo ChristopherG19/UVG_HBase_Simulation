@@ -1,6 +1,6 @@
 import time
 
-def put(command):
+def put(command, data):
     start_time = time.time()
     ret = ""
 
@@ -36,13 +36,16 @@ def put(command):
         return "Sintaxis inválida: Argumentos faltantes \n"
     
     # TODO: real put
+
+    # if enabled
+    # else: return "Tabla no está hablitada"
     
  
     end_time = time.time()
     ret += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
     return ret
 
-def get(command):
+def get(command, data):
     start_time = time.time()
     ret = ""
     cantFilas = 0
@@ -66,6 +69,9 @@ def get(command):
 
     # TODO: real put
 
+    # if enabled
+    # else: return "Tabla no está hablitada"
+
 
     except:
         return "Sintaxis inválida: Argumentos faltantes \n"
@@ -75,28 +81,55 @@ def get(command):
     ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
     return ret
 
-def scan(command):
+def scan(command, data):
     start_time = time.time()
     ret = ""
     cantFilas = 0
 
     try:
         command = command.split(" ")
-        tableName = command[1]
+        tableName = command[1].strip().strip("'")
         print(tableName)
 
     except:
         return "scan '<table name>\n"
 
-    ret += "ROW\t\tCOLUMN+CELL"
+    ret += "ROW\t\tCOLUMN+CELL\n"
 
-    # TODO: real put
+    # TODO: real scan
+
+    # conseguir region
+    region = ""
+
+    for x in data:
+        for y in data[x]:
+            if y == tableName:
+                region = x 
+
+    print("region: " + region)
+
+    # Verificar existencia de tabla
+    if region == "":
+        return "La tabla no existe\n"
+
+    # verificar disponilbilidad
+    if data[region][tableName]["enabled"] != "True":
+        return "La tabla no está disponible\t"
+
+    for row in data[region][tableName]["rows"]:
+        for columnFamily in data[region][tableName]["rows"][row]:
+            for columnName in data[region][tableName]["rows"][row][columnFamily]:    
+                ret +=row + "\t\t" + "Column="+\
+                columnFamily+":"+columnName+\
+                ", timestamp="+data[region][tableName]["rows"][row][columnFamily][columnName]["Timestamp"]+\
+                ", value="+data[region][tableName]["rows"][row][columnFamily][columnName]["value"]+\
+                "\n"
 
     end_time = time.time()
     ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
     return ret
 
-def delete(command):
+def delete(command, data):
     start_time = time.time()
     ret = ""
     cantFilas = 0
@@ -129,13 +162,16 @@ def delete(command):
         return "Sintaxis inválida: Argumentos faltantes \n"
     
     # TODO: real put
+
+    # if enabled
+    # else: return "Tabla no está hablitada"
     
 
     end_time = time.time()
     ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
     return ret
 
-def deleteAll(command):
+def deleteAll(command, data):
     start_time = time.time()
     ret = ""
     cantFilas = 0
@@ -162,11 +198,16 @@ def deleteAll(command):
         return "Sintaxis inválida: Argumentos faltantes \n"
     
 
+    # TODO
+
+    # if enabled
+    # else: return "Tabla no está hablitada"
+
     end_time = time.time()
     ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos\n"
     return ret
 
-def countF(command):
+def countF(command, data):
     start_time = time.time()
     ret = ""
 
@@ -178,14 +219,17 @@ def countF(command):
     except:
         return "count '<table name>'\n"
     
-    # TODO: real put
+    # TODO: real count
+
+    # if enabled
+    # else: return "Tabla no está hablitada"
 
 
     end_time = time.time()
     ret += "1 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
     return ret
 
-def truncate(command):
+def truncate(command, data):
     start_time = time.time()
     ret = ""
 
@@ -198,6 +242,9 @@ def truncate(command):
         return "truncate '<table name>'\n"
     
     # TODO: real put
+
+    # if enabled
+    # else: return "Tabla no está hablitada"
 
 
     end_time = time.time()

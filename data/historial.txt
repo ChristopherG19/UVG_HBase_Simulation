@@ -107,3 +107,49 @@ Comandos ingresados:
 2023/04/15 01:01:54: deleteall table, row
 2023/04/15 01:02:06: delte table, row, col, tim
 2023/04/15 01:02:21: delete table, row, col, tim
+-----------------------
+Comandos ingresados:
+2023/04/15 02:02:14: scan
+2023/04/15 02:02:17: scan table
+-----------------------
+Comandos ingresados:
+2023/04/15 02:02:32: scan table
+-----------------------
+Comandos ingresados:
+2023/04/15 02:03:33: scan Tabla2
+-----------------------
+Comandos ingresados:
+2023/04/15 02:03:59: scan Table2
+-----------------------
+Comandos ingresados:
+2023/04/15 02:06:04: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 02:07:21: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 02:08:19: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 02:13:50: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 02:14:35: scan Table3
+-----------------------
+Comandos ingresados:
+2023/04/15 02:15:51: scan Tabladfd
+2023/04/15 02:15:56: scan Tabla3
+-----------------------
+Comandos ingresados:
+2023/04/15 03:05:53: scan Tabla2
+-----------------------
+Comandos ingresados:
+2023/04/15 03:10:09: scan Tabla2
+-----------------------
+Comandos ingresados:
+2023/04/15 03:11:59: scan Tabla 2
+2023/04/15 03:12:05: scan Tabla2
+2023/04/15 03:12:41: scan Table2
+2023/04/15 03:12:45: scan Table2
+2023/04/15 03:12:49: scan Tabla2
+2023/04/15 03:13:34: scan Tabla2
