@@ -1,41 +1,54 @@
 {
-    "Timestamp": "",
-    "Region": {
-        "1": {
-            "Column Families": {
-                "Column qualifiers": {
-                    "Timestamp1": "value"
-                },
-                "Column qualifiers2": {
-                    "Timestamp1": "value",
-                    "Timestamp2": "value2"
-                }
-            },
-            "Column Families2": {
-                "Column qualifiers3": {
-                    "Timestamp1": "value3"
-                },
-                "Column qualifiers4": {
-                    "Timestamp2": "value"
+    "Region1": {
+        "Employees": {
+            "enabled": "True",
+            "timestamp": "fdja\u00c3\u00b1lfjd",
+            "rows": {
+                "1": {
+                    "Column Families": {
+                        "Column qualifiers": {
+                            "Timestamp1": "value"
+                        },
+                        "Column qualifiers2": {
+                            "Timestamp1": "value",
+                            "Timestamp2": "value2"
+                        }
+                    },
+                    "Column Families2": {
+                        "Column qualifiers3": {
+                            "Timestamp1": "value3"
+                        },
+                        "Column qualifiers4": {
+                            "Timestamp2": "value"
+                        }
+                    }
                 }
             }
         }
     },
     "Region2": {
-        "1": {
-            "Column Families": {
-                "Column qualifiers": {"Timestamp1": "John"},
-                "Column qualifiers2": {
-                    "Timestamp1": "value",
-                    "Timestamp2": "value2"
-                }
-            },
-            "Column Families2": {
-                "Column qualifiers3": {
-                    "Timestamp1": "value3"
-                },
-                "Column qualifiers4": {
-                    "Timestamp2": "value"
+        "Tabla2": {
+            "enabled": "True",
+            "timestamp": "fdja\u00c3\u00b1lfjd",
+            "rows": {
+                "1": {
+                    "Column Families": {
+                        "Column qualifiers": {
+                            "Timestamp1": "value"
+                        },
+                        "Column qualifiers2": {
+                            "Timestamp1": "value",
+                            "Timestamp2": "value2"
+                        }
+                    },
+                    "Column Families2": {
+                        "Column qualifiers3": {
+                            "Timestamp1": "value3"
+                        },
+                        "Column qualifiers4": {
+                            "Timestamp2": "value"
+                        }
+                    }
                 }
             }
         }
