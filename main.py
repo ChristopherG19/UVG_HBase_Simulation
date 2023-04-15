@@ -114,22 +114,28 @@ class HBaseSimulator:
                 self.output_text.insert(tk.END, commandOutput)
 
             elif (cm == "get"):
-                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+                commandOutput = get(command)
+                self.output_text.insert(tk.END, commandOutput)
 
             elif (cm == "scan"):
-                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+                commandOutput = scan(command)
+                self.output_text.insert(tk.END, commandOutput)
 
             elif (cm == "delete"):
-                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+                commandOutput = delete(command)
+                self.output_text.insert(tk.END, commandOutput)
                 
-            elif (cm == "delete_all"):
-                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+            elif (cm == "deleteall"):
+                commandOutput = deleteAll(command)
+                self.output_text.insert(tk.END, commandOutput)
 
             elif (cm == "count"):
-                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+                commandOutput = countF(command)
+                self.output_text.insert(tk.END, commandOutput)
                 
             elif (cm == "truncate"):
-                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+                commandOutput = truncate(command)
+                self.output_text.insert(tk.END, commandOutput)
 
             else:
                 if cm == "clear":

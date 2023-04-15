@@ -1,84 +1,3 @@
-Comandos ingresados:
-2023/04/14 15:06:14: quit
-2023/04/14 15:06:16: quit()
-2023/04/14 15:06:17: clear
-2023/04/14 15:06:21: exit
------------------------
-Comandos ingresados:
-2023/04/14 20:17:50: put
-2023/04/14 20:17:51: 
-2023/04/14 20:18:07: df
-2023/04/14 20:18:08: lol
-2023/04/14 20:18:09: lol
-2023/04/14 20:18:12: put
-2023/04/14 20:18:15: put
-2023/04/14 20:18:15: 
-2023/04/14 20:18:15: 
-2023/04/14 20:18:15: 
-2023/04/14 20:18:16: dfe
-2023/04/14 20:18:17: fe
-2023/04/14 20:18:17: f
-2023/04/14 20:18:17: e
-2023/04/14 20:18:17: fe
-2023/04/14 20:18:17: f
-2023/04/14 20:18:18: ef
-2023/04/14 20:18:18: e
-2023/04/14 20:18:18: fe
-2023/04/14 20:18:18: fe
-2023/04/14 20:19:08: exit
------------------------
-Comandos ingresados:
-2023/04/14 20:19:30: put
-2023/04/14 20:19:32: put
-2023/04/14 20:19:33: put
-2023/04/14 20:19:34: put
-2023/04/14 20:19:35: put
-2023/04/14 20:20:11: exit
------------------------
-Comandos ingresados:
-2023/04/14 20:20:19: put
-2023/04/14 20:20:27: get
-2023/04/14 20:20:44: quit
-2023/04/14 20:20:46: exit
------------------------
-Comandos ingresados:
-2023/04/14 20:20:57: put
-2023/04/14 20:21:03: exit
------------------------
-Comandos ingresados:
-2023/04/14 20:59:16: put
-2023/04/14 20:59:17: clear
-2023/04/14 20:59:19: list
-2023/04/14 20:59:26: create
-2023/04/14 20:59:28: put
-2023/04/14 20:59:30: list
-2023/04/14 20:59:33: put list
------------------------
-Comandos ingresados:
-2023/04/14 21:02:03: put
------------------------
-Comandos ingresados:
-2023/04/14 21:02:27: put
------------------------
-Comandos ingresados:
-2023/04/14 21:06:05: put
------------------------
-Comandos ingresados:
-2023/04/14 21:22:06: put
------------------------
-Comandos ingresados:
-2023/04/14 21:22:36: pu
-2023/04/14 21:22:37: put
------------------------
-Comandos ingresados:
-2023/04/14 21:23:35: put
------------------------
-Comandos ingresados:
-2023/04/14 22:10:54: put lol
------------------------
-Comandos ingresados:
-2023/04/14 22:17:34: put lol
-2023/04/14 22:18:42: put lol
 -----------------------
 Comandos ingresados:
 2023/04/14 22:18:51: py k
@@ -107,3 +26,84 @@ Comandos ingresados:
 -----------------------
 Comandos ingresados:
 2023/04/14 23:42:20: put 'table', 3, 'familia:nombre', valor
+-----------------------
+Comandos ingresados:
+2023/04/14 23:51:15: put 'table', 3, 'familia:nombre', valor
+2023/04/14 23:51:34: get 'table','id'
+-----------------------
+Comandos ingresados:
+2023/04/14 23:54:44: 
+2023/04/14 23:54:46: get
+2023/04/14 23:54:49: get
+2023/04/14 23:54:50: get
+2023/04/14 23:54:51: get
+2023/04/14 23:54:58: get 'table','id'
+-----------------------
+Comandos ingresados:
+2023/04/14 23:55:51: get 'table','id'
+2023/04/14 23:55:55: get
+-----------------------
+Comandos ingresados:
+2023/04/14 23:56:27: get
+2023/04/14 23:56:29: get 'table','id'
+2023/04/14 23:57:15: get 'table','id'
+-----------------------
+Comandos ingresados:
+2023/04/14 23:57:22: get
+2023/04/14 23:57:24: get 'table','id'
+-----------------------
+Comandos ingresados:
+2023/04/15 00:37:16: put
+2023/04/15 00:37:17: get
+2023/04/15 00:37:29: get 'table','id' 
+2023/04/15 00:37:40: put 'table', 3, 'familia:nombre', valor
+2023/04/15 00:37:43: 
+2023/04/15 00:37:46: put 'table', 3, 'familia:nombre', valor
+-----------------------
+Comandos ingresados:
+2023/04/15 00:38:36: put 'table', 3, 'familia:nombre', valor
+2023/04/15 00:38:45: get 'table','id' 
+2023/04/15 00:38:46: 
+2023/04/15 00:38:47: get 'table','id' 
+-----------------------
+Comandos ingresados:
+2023/04/15 00:46:29: delete
+2023/04/15 00:46:40: delete table, row, col, tim
+-----------------------
+Comandos ingresados:
+2023/04/15 00:48:00: delete
+-----------------------
+Comandos ingresados:
+2023/04/15 00:48:17: delete �<table name>�, �<row>�, �<column name >�, �<time stamp>�
+2023/04/15 00:48:33: delete table, row, col, tim
+-----------------------
+Comandos ingresados:
+2023/04/15 00:48:50: delete table, row, col, tim
+2023/04/15 00:48:53: 
+2023/04/15 00:48:56: delete table, row, col, tim
+-----------------------
+Comandos ingresados:
+2023/04/15 00:51:05: deleteall
+2023/04/15 00:51:08: deleteAll
+2023/04/15 00:51:18: delete_all
+-----------------------
+Comandos ingresados:
+2023/04/15 00:51:34: deleteall
+2023/04/15 00:51:41: deleteall table, row
+-----------------------
+Comandos ingresados:
+2023/04/15 00:52:09: deleteall table, row
+-----------------------
+Comandos ingresados:
+2023/04/15 01:00:26: truncate
+-----------------------
+Comandos ingresados:
+2023/04/15 01:01:05: truncate
+2023/04/15 01:01:09: count
+2023/04/15 01:01:17: deleteall
+2023/04/15 01:01:21: delete
+2023/04/15 01:01:34: truncate lol
+2023/04/15 01:01:42: count lol
+2023/04/15 01:01:54: deleteall table, row
+2023/04/15 01:02:06: delte table, row, col, tim
+2023/04/15 01:02:21: delete table, row, col, tim

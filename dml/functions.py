@@ -2,25 +2,25 @@ import time
 
 def put(command):
     start_time = time.time()
-    put_ret = ""
+    ret = ""
 
     try:
         # conseguimos los atributos del commando
         command = command.split(" ", 1)
-        
+        print(command[1])
     
     except:
-        return "Formato: put '<table name>', 'row id', '<colfamily:colname>','<value>' \n"
+        return "put '<table name>', 'row id', '<colfamily:colname>','<value>' \n"
 
     try: 
-        attributes = command[1].split(",")
-        print(attributes)
+        arguments = command[1].split(",")
+
         # Conseguimos cada uno de los atributos
-        tableName = attributes[0].strip()
+        tableName = arguments[0].strip()
         print(tableName)
-        rowID = attributes[1].strip()
+        rowID = arguments[1].strip()
         print(rowID)
-        info = attributes[2].strip().strip("'")
+        info = arguments[2].strip().strip("'")
         print(info)
 
         col = info.split(":")
@@ -33,32 +33,173 @@ def put(command):
         print(value)
 
     except:
-        return "Sintáxis inválida: Argumentos faltantes \n"
+        return "Sintaxis inválida: Argumentos faltantes \n"
     
     # TODO: real put
     
  
     end_time = time.time()
-    put_ret += "0 filas en " + format(end_time - start_time, ".4f") + " segundos"
-    return put_ret
+    ret += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+    return ret
 
-def get():
-    return ""
+def get(command):
+    start_time = time.time()
+    ret = ""
+    cantFilas = 0
 
-def scan():
-    return ""
+    try:
+        # conseguimos los atributos del commando
+        command = command.split(" ", 1)
+        print(command[1])
+    
+    except:
+        return "get '<table name>', 'row id' \n"
 
-def delete():
-    return ""
+    try:
+        arguments = command[1].strip().split(",")
 
-def deleteAll():
-    return ""
+        tableName = arguments[0]
+        print(tableName)
 
-def count():
-    return ""
+        rowID = arguments[1]
+        print(rowID)
 
-def count():
-    return ""
+    # TODO: real put
 
-def truncate():
-    return ""
+
+    except:
+        return "Sintaxis inválida: Argumentos faltantes \n"
+
+
+    end_time = time.time()
+    ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+    return ret
+
+def scan(command):
+    start_time = time.time()
+    ret = ""
+    cantFilas = 0
+
+    try:
+        command = command.split(" ")
+        tableName = command[1]
+        print(tableName)
+
+    except:
+        return "scan '<table name>\n"
+
+    ret += "ROW\t\tCOLUMN+CELL"
+
+    # TODO: real put
+
+    end_time = time.time()
+    ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+    return ret
+
+def delete(command):
+    start_time = time.time()
+    ret = ""
+    cantFilas = 0
+
+    try:
+        # conseguimos los atributos del commando
+        command = command.split(" ", 1)
+        print(command[1])
+    
+    except:
+        return "delete '<table name>', '<row>', '<column name >', '<time stamp>' \n"
+
+    try: 
+        arguments = command[1].split(",")
+        print(arguments)
+
+        tableName = arguments[0].strip("'")
+        print(tableName)
+
+        row = arguments[1].strip("'")
+        print(row)
+
+        columnName = arguments[2].strip("'")
+        print(columnName)
+
+        timeStamp = arguments[3].strip("'") 
+        print(timeStamp)
+
+    except:
+        return "Sintaxis inválida: Argumentos faltantes \n"
+    
+    # TODO: real put
+    
+
+    end_time = time.time()
+    ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+    return ret
+
+def deleteAll(command):
+    start_time = time.time()
+    ret = ""
+    cantFilas = 0
+
+    try:
+        # conseguimos los atributos del commando
+        command = command.split(" ", 1)
+        print(command[1])
+    
+    except:
+        return "deleteall '<table name>', '<row>' \n"
+
+    try: 
+        arguments = command[1].split(",")
+        print(arguments)
+
+        tableName = arguments[0].strip("'")
+        print(tableName)
+
+        row = arguments[1].strip("'")
+        print(row)
+
+    except:
+        return "Sintaxis inválida: Argumentos faltantes \n"
+    
+
+    end_time = time.time()
+    ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos\n"
+    return ret
+
+def countF(command):
+    start_time = time.time()
+    ret = ""
+
+    try:
+        command = command.split(" ")
+        tableName = command[1]
+        print(tableName)
+
+    except:
+        return "count '<table name>'\n"
+    
+    # TODO: real put
+
+
+    end_time = time.time()
+    ret += "1 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+    return ret
+
+def truncate(command):
+    start_time = time.time()
+    ret = ""
+
+    try:
+        command = command.split(" ")
+        tableName = command[1]
+        print(tableName)
+
+    except:
+        return "truncate '<table name>'\n"
+    
+    # TODO: real put
+
+
+    end_time = time.time()
+    ret += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+    return ret
