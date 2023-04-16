@@ -470,3 +470,19 @@ Comandos ingresados:
 2023/04/15 19:35:16: delete
 2023/04/15 19:36:05: delete 'Employees', '2', 'nmm:pero'
 2023/04/15 19:36:30: delete 'Employees', '2', 'nmm:peeeero'
+-----------------------
+Comandos ingresados:
+2023/04/15 19:50:02: delete
+2023/04/15 19:50:07: deleteall
+2023/04/15 19:50:26: deleteall 'Employees', 'tonto'
+-----------------------
+Comandos ingresados:
+2023/04/15 19:51:33: deleteall 'Employees', 'tonto'
+2023/04/15 19:51:42: deleteall 'Employees', 'tonto'
+-----------------------
+Comandos ingresados:
+2023/04/15 19:52:18: deleteall 'Employees', 'tontdo'
+-----------------------
+Comandos ingresados:
+2023/04/15 19:55:02: deleteall 'Employees', 'tonto'
+2023/04/15 19:56:35: deleteall 'Employees', 'tonto'

@@ -292,9 +292,6 @@ def delete(command, data):
     return (data_string, "")
 
 def deleteAll(command, data):
-    start_time = time.time()
-    ret = ""
-    cantFilas = 0
 
     try:
         # conseguimos los atributos del commando
@@ -305,28 +302,52 @@ def deleteAll(command, data):
         return "deleteall '<table name>', '<row>' \n"
 
     try: 
-        arguments = command[1].split(",")
+        arguments = command[1].strip().split(",")
         print(arguments)
 
-        tableName = arguments[0].strip("'")
+        tableName = arguments[0].strip().strip("'")
         print(tableName)
 
-        row = arguments[1].strip("'")
-        print(row)
+        rowID = arguments[1].strip().strip("'")
+        print(rowID)
 
     except:
         return "Sintaxis inválida: Argumentos faltantes \n"
     
+# conseguir region
+    region = ""
 
-    # TODO
+    for x in data:
+        for y in data[x]:
+            if y == tableName:
+                region = x 
 
-    # if enabled
-    # else: return "Tabla no está hablitada"
+    print("region: " + region)
 
-    end_time = time.time()
-    ret+= "\n"
-    ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos\n"
-    return ret
+    # Verificar existencia de tabla
+    if region == "":
+        return True, "La tabla no existe\n"
+
+    # verificar disponilbilidad
+    if data[region][tableName]["enabled"] != "True":
+        return True, "La tabla no está disponible\t"
+    
+    # verificar si existe rowID
+    try:
+        data[region][tableName]["rows"][rowID]
+
+        del data[region][tableName]["rows"][rowID]
+
+    except:
+        # no existe rowID
+        return True, f"ERROR: Row ID desconocido {rowID} en tabla {tableName}"
+
+    # modificar timestamp de la tabla
+    data[region][tableName]["timestamp"] = time.time() * 1000
+
+    data_string = json.dumps(data)
+
+    return (data_string, "")
 
 def countF(command, data):
     start_time = time.time()

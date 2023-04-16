@@ -160,9 +160,26 @@ class HBaseSimulator:
                 self.output_text.insert(tk.END, commandOutput)
                 
             elif (cm == "deleteall"):
-                commandOutput = deleteAll(command, data)
-                self.output_text.insert(tk.END, commandOutput)
+                start_time = time.time()
+                commandOutput = ""
 
+                newData, errmsg = deleteAll(command, data)
+
+                if (type(newData) != str):
+                    commandOutput = errmsg
+
+                else: 
+                    data = json.loads(newData)
+
+                    with open(self.db, 'w') as f:
+                        json.dump(data, f, indent= 4)
+
+                    end_time = time.time()
+                    commandOutput+= "\n"
+                    commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+
+                self.output_text.insert(tk.END, commandOutput)
+                
             elif (cm == "count"):
                 commandOutput = countF(command, data)
                 self.output_text.insert(tk.END, commandOutput)

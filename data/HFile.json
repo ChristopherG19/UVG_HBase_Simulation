@@ -32,7 +32,7 @@
     "Region1-copy": {
         "Employees": {
             "enabled": "True",
-            "timestamp": 1681608965152.0037,
+            "timestamp": 1681610102514.124,
             "rows": {
                 "1": {
                     "Column Families": {
@@ -78,14 +78,6 @@
                     "nmm": {
                         "mmn": {
                             "Timestamp": 1681599653.1403081,
-                            "value": "lol"
-                        }
-                    }
-                },
-                "tonto": {
-                    "loco": {
-                        "mmn": {
-                            "Timestamp": 1681607351014.9827,
                             "value": "lol"
                         }
                     }
