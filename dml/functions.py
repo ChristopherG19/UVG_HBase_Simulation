@@ -9,7 +9,7 @@ def put(command, data):
         command[1]
     
     except:
-        return True, "put '<table name>', 'row id', '<colfamily:colname>','<value>' \n"
+        return (True, "put '<table name>', 'row id', '<colfamily:colname>','<value>' \n")
 
     try: 
         arguments = command[1].split(",")
@@ -82,7 +82,6 @@ def put(command, data):
     data[region][tableName]["timestamp"] = time.time() * 1000
 
     data_string = json.dumps(data)
-
     return (data_string, "")
 
 def get(command, data):

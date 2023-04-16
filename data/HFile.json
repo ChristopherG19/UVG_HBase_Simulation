@@ -2,7 +2,7 @@
     "Region1": {
         "Employees": {
             "enabled": "True",
-            "timestamp": "fdja\u00c3\u00b1lfjd",
+            "timestamp": 1681610102514.124,
             "rows": {
                 "1": {
                     "Column Families": {
@@ -29,8 +29,8 @@
             }
         }
     },
-    "Region1-copy": {
-        "Employees": {
+    "Region2": {
+        "EmployeesB": {
             "enabled": "True",
             "timestamp": 1681610102514.124,
             "rows": {
@@ -84,25 +84,5 @@
                 }
             }
         }
-    },
-    "Region2": {
-        "1": {
-            "Column Families": {
-                "Column qualifiers": {"Timestamp1": "John"},
-                "Column qualifiers2": {
-                    "Timestamp1": "value",
-                    "Timestamp2": "value2"
-                }
-            },
-            "Column Families2": {
-                "Column qualifiers3": {
-                    "Timestamp1": "value3"
-                },
-                "Column qualifiers4": {
-                    "Timestamp2": "value"
-                }
-            }
-        }
-    },
-    "Region3": {}
+    }
 }

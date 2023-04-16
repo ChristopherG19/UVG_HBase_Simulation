@@ -81,7 +81,7 @@ class HBaseSimulator:
             commands = [
                 "create", "list", "disable", "enable", "is_enabled", "alter",
                 "drop", "drop_all", "describe", "put", "get",
-                "scan", "delete", "delete_all", "count", "truncate" 
+                "scan", "delete", "deleteall", "count", "truncate" 
             ]
 
             if (cm != "clear"):
@@ -94,7 +94,7 @@ class HBaseSimulator:
                     tm = datetime.datetime.now().strftime("%S")
                     cmdLine = f"\nhbase(main):{tm}> Comando {command} desconocido"
                     self.show_results(cmdLine)
-
+            
             if(cm == "create"):
                 timestamp = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
                 n = len(data) + 1
@@ -276,15 +276,15 @@ class HBaseSimulator:
                     commandOutput+= "\n"
                     commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
 
-                self.output_text.insert(tk.END, commandOutput)
+                self.show_results(commandOutput)
 
             elif (cm == "get"):
                 commandOutput = get(command, data)
-                self.output_text.insert(tk.END, commandOutput)
+                self.show_results(commandOutput)
 
             elif (cm == "scan"):
                 commandOutput = scan(command, data)
-                self.output_text.insert(tk.END, commandOutput)
+                self.show_results(commandOutput)
 
             elif (cm == "delete"):
                 start_time = time.time()
@@ -305,7 +305,7 @@ class HBaseSimulator:
                     commandOutput+= "\n"
                     commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
 
-                self.output_text.insert(tk.END, commandOutput)
+                self.show_results(commandOutput)
                 
             elif (cm == "deleteall"):
                 start_time = time.time()
@@ -326,11 +326,11 @@ class HBaseSimulator:
                     commandOutput+= "\n"
                     commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
 
-                self.output_text.insert(tk.END, commandOutput)
+                self.show_results(commandOutput)
                 
             elif (cm == "count"):
                 commandOutput = countF(command, data)
-                self.output_text.insert(tk.END, commandOutput)
+                self.show_results(commandOutput)
                 
             elif (cm == "truncate"):
                 start_time = time.time()
@@ -351,7 +351,7 @@ class HBaseSimulator:
                     commandOutput+= "\n"
                     commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
 
-                self.output_text.insert(tk.END, commandOutput)
+                self.show_results(commandOutput)
 
             else:
                 if cm == "clear":
