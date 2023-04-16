@@ -520,3 +520,800 @@ Comandos ingresados:
 2023/04/15 20:13:49: get
 2023/04/15 20:13:52: delete
 2023/04/15 20:14:08: scan
+2023/04/14 16:05:23: create employees data data2
+2023/04/14 16:05:27: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:06:32: create employees data data2
+2023/04/14 16:06:59: create emplo data data2
+-----------------------
+Comandos ingresados:
+2023/04/14 16:07:22: create employees data data2
+2023/04/14 16:07:33: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:08:00: create employees, data, data2
+2023/04/14 16:08:09: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:09:01: create 'employees', 'data', 'data2'
+-----------------------
+Comandos ingresados:
+2023/04/14 16:09:43: create 'employees', 'data', 'data2'
+2023/04/14 16:09:52: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:10:22: create 'employees', 'data', 'data2'
+2023/04/14 16:10:28: exir
+2023/04/14 16:10:29: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:23:27: create 'employees', 'data', 'data2'
+2023/04/14 16:23:43: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:24:52: create 'employees', 'data', 'data2'
+2023/04/14 16:25:41: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:27:30: create 'Office', 'data', 'data2'
+2023/04/14 16:27:51: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:31:09: create 'employees', 'data', 'data2'
+2023/04/14 16:31:17: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:36:12: create 'employees', 'data', 'data2'
+2023/04/14 16:36:15: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:37:12: create 'employees', 'data', 'data2', 'data3', 'data4', 'data5', 'data6'
+2023/04/14 16:37:20: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:40:52: create 'employees', 'data', 'data2'
+2023/04/14 16:41:06: create 'employees2', '3', 'data4'
+2023/04/14 16:41:12: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:54:10: list
+2023/04/14 16:54:14: list
+2023/04/14 16:54:16: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:54:49: list
+2023/04/14 16:54:55: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 16:55:06: list
+2023/04/14 16:55:10: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 17:02:59: list
+-----------------------
+Comandos ingresados:
+2023/04/14 17:04:52: list
+2023/04/14 17:05:36: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 17:05:41: list
+2023/04/14 17:05:47: list
+2023/04/14 17:05:53: clear
+2023/04/14 17:05:56: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 17:30:25: create 'employees', 'data', 'data2'
+2023/04/14 17:30:34: clear
+2023/04/14 17:30:38: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 17:40:34: list
+2023/04/14 17:40:39: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 17:41:27: list
+2023/04/14 17:41:58: create 'office', 'data', 'data2'
+2023/04/14 17:42:14: list
+2023/04/14 17:42:18: clear
+2023/04/14 17:42:19: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 17:44:56: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 17:45:08: list
+2023/04/14 17:45:24: create 'office', 'data', 'data2'
+2023/04/14 17:45:48: list
+2023/04/14 17:45:51: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 17:46:17: list
+2023/04/14 17:46:26: create 'employees', 'data', 'data2'
+2023/04/14 17:46:31: lis
+2023/04/14 17:46:34: list
+2023/04/14 17:46:43: clear
+2023/04/14 17:46:44: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 17:54:10: list
+2023/04/14 17:54:30: create 'office', 'data', 'data2'
+2023/04/14 17:54:32: list
+2023/04/14 17:54:39: erase
+2023/04/14 17:54:58: exit
+-----------------------
+Comandos ingresados:
+-----------------------
+Comandos ingresados:
+-----------------------
+Comandos ingresados:
+2023/04/14 17:55:30: list
+2023/04/14 17:55:43: create 'office, 'data3', 'data4'
+2023/04/14 17:55:46: list
+2023/04/14 17:55:49: erase
+2023/04/14 17:55:56: exot
+2023/04/14 17:55:58: exit
+-----------------------
+Comandos ingresados:
+2023/04/14 17:56:32: list
+2023/04/14 17:56:44: create 'office', 'data3', 'data4'
+2023/04/14 17:56:47: list
+2023/04/14 17:56:50: erase
+2023/04/14 17:56:53: prueba
+2023/04/14 17:57:07: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 19:13:26: is_enabled
+14/04/2023 19:13:42: is_enabled Employees
+-----------------------
+Comandos ingresados:
+14/04/2023 19:14:15: is_enabled Employees
+-----------------------
+Comandos ingresados:
+14/04/2023 19:14:54: is_enabled Employees
+14/04/2023 19:15:01: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 19:16:17: is_enabled Employees
+-----------------------
+Comandos ingresados:
+14/04/2023 19:17:01: is_enabled Employees
+14/04/2023 19:17:07: clear
+14/04/2023 19:17:09: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 19:17:22: is_enabled Employees
+14/04/2023 19:17:58: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 19:18:36: is_enabled Employees
+14/04/2023 19:18:41: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 19:18:53: is_enabled Employees
+14/04/2023 19:18:56: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 19:49:38: list
+14/04/2023 19:49:48: is_enabled office
+14/04/2023 19:49:54: disable office
+14/04/2023 19:50:10: is_enabled office
+14/04/2023 19:50:13: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 19:52:12: list
+14/04/2023 19:52:17: is_enabled office
+14/04/2023 19:52:27: disable office
+14/04/2023 19:52:35: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 19:52:44: list
+14/04/2023 19:52:49: is_enabled office
+14/04/2023 19:52:52: disable office
+14/04/2023 19:53:05: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 19:53:49: list
+14/04/2023 19:53:54: is_enabled office
+14/04/2023 19:53:58: disable office
+14/04/2023 19:54:07: is_enabled office
+14/04/2023 19:54:16: clear
+14/04/2023 19:54:17: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 19:55:45: list
+-----------------------
+Comandos ingresados:
+14/04/2023 19:56:18: list
+14/04/2023 19:56:24: disable office
+14/04/2023 19:56:34: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 19:56:51: list
+14/04/2023 19:56:56: disable office
+-----------------------
+Comandos ingresados:
+14/04/2023 19:58:05: list
+14/04/2023 19:58:08: disable office
+14/04/2023 19:58:15: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 19:59:45: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 19:59:55: disable office
+14/04/2023 20:01:06: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 20:01:19: list
+14/04/2023 20:01:24: is_enabled office
+14/04/2023 20:01:29: disable office
+14/04/2023 20:05:13: disable office
+14/04/2023 20:05:23: is_enabled office
+14/04/2023 20:05:28: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 20:09:35: list
+14/04/2023 20:09:42: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 20:10:04: list
+14/04/2023 20:10:10: is_enabled office
+14/04/2023 20:10:15: enable office
+14/04/2023 20:10:25: is_enabled office
+14/04/2023 20:10:34: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 20:20:24: disable office
+14/04/2023 20:20:32: enable office
+14/04/2023 20:20:35: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:19:37: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:20:41: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:20:52: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:21:49: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:21:57: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:22:11: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:22:26: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:22:34: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:22:47: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:22:54: exi
+14/04/2023 22:22:55: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:24:09: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:24:18: clear
+14/04/2023 22:24:19: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:24:36: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:24:41: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:26:20: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:26:35: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:26:38: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:26:45: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:29:57: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:30:08: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:30:29: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:30:31: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:31:02: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:31:08: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:31:45: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+-----------------------
+Comandos ingresados:
+14/04/2023 22:32:49: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:33:41: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:33:49: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:34:11: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:34:16: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:34:24: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:34:41: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:34:48: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:34:57: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:35:01: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:53:06: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:53:14: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:53:52: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:54:02: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:59:09: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:59:50: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 22:59:54: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 22:59:58: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:00:06: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:00:47: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:00:54: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:01:00: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:01:09: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:01:25: 
+14/04/2023 23:01:30: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:01:42: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:01:47: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:02:06: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:02:12: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:03:05: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:03:12: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:03:21: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:03:46: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+-----------------------
+Comandos ingresados:
+14/04/2023 23:04:28: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:04:35: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:05:28: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:05:44: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:05:47: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:06:59: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:07:05: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:08:41: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:08:46: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:09:20: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:10:04: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+-----------------------
+Comandos ingresados:
+14/04/2023 23:10:19: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:14:38: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:14:51: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:16:16: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:16:36: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:16:44: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:16:58: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:17:05: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:20:17: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:22:39: alter 'Tabla2', 'delete' => 'ColumnFamilies'
+14/04/2023 23:22:48: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:31:36: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies'
+14/04/2023 23:32:16: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:32:22: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies', 'Test'
+14/04/2023 23:33:12: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:33:55: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies', 'Test'
+14/04/2023 23:34:15: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:34:23: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies', 'Test'
+14/04/2023 23:34:46: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:34:54: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies', 'Test'
+14/04/2023 23:35:33: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:35:37: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies', 'Test'
+14/04/2023 23:37:22: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:37:36: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies', 'Test'
+14/04/2023 23:38:06: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:38:10: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies', 'Test'
+14/04/2023 23:38:31: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:38:42: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies', 'Test'
+-----------------------
+Comandos ingresados:
+14/04/2023 23:39:10: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies', 'Test'
+14/04/2023 23:42:04: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:42:13: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies', 'Test'
+14/04/2023 23:42:42: alter 'Tabla2', 'ModifyName' => 'Test', 'ColumnFamilies'
+14/04/2023 23:42:46: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:44:55: list
+14/04/2023 23:44:58: clear
+14/04/2023 23:45:04: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies', 'Test'
+14/04/2023 23:45:53: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:46:20: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies', 'Test'
+14/04/2023 23:46:43: alter 'Tabla2', 'ModifyName' => 'Test', 'Test2'
+14/04/2023 23:47:06: alter 'Tabla2', 'ModifyName' => 'Test', 'Test2'
+14/04/2023 23:47:13: alter 'Tabla2', 'ModifyName' => 'Test', 'Prueba'
+14/04/2023 23:47:16: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:47:34: alter 'Tabla2', 'ModifyName' => 'Test', 'Test2'
+14/04/2023 23:47:54: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:48:00: alter 'Tabla2', 'ModifyName' => 'Test', 'Test2'
+-----------------------
+Comandos ingresados:
+14/04/2023 23:48:33: alter 'Tabla2', 'ModifyName' => 'Test', 'Test2'
+14/04/2023 23:48:47: alter 'Tabla2', 'ModifyName' => 'Test2', 'Test3'
+14/04/2023 23:49:11: alter 'Tabla2', 'ModifyName' => 'Test3', 'ColumnFamilies1'
+14/04/2023 23:49:14: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:53:00: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:53:10: disable Tabla2
+14/04/2023 23:53:14: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies1', 'Test2'
+14/04/2023 23:53:44: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:53:56: alter 'Tabla2', 'ModifyName' => 'ColumnFamilies1', 'Test2'
+14/04/2023 23:54:07: clear
+14/04/2023 23:54:08: exit
+-----------------------
+Comandos ingresados:
+14/04/2023 23:55:12: enable Tabla2
+14/04/2023 23:55:20: is_enabled 'Tabla2'
+14/04/2023 23:55:23: list
+14/04/2023 23:55:29: clear
+14/04/2023 23:55:30: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 00:06:46: drop office
+15/04/2023 00:07:16: drop officeexit
+15/04/2023 00:07:17: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 00:07:27: drop 'office'
+15/04/2023 00:07:54: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 00:08:02: drop 'office'
+15/04/2023 00:08:07: clear
+15/04/2023 00:08:08: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 00:09:34: drop office
+15/04/2023 00:10:01: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 00:10:06: drop office
+-----------------------
+Comandos ingresados:
+15/04/2023 00:11:06: drop office
+15/04/2023 00:11:14: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 00:14:51: drop office
+15/04/2023 00:14:59: disable office
+15/04/2023 00:15:02: drop office
+15/04/2023 00:15:06: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 00:16:07: drop office
+15/04/2023 00:16:17: drop office
+15/04/2023 00:16:30: list
+15/04/2023 00:16:33: clear
+15/04/2023 00:16:34: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 00:44:52: disable prueba
+15/04/2023 00:45:13: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 00:45:53: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 00:46:10: disable prueba
+15/04/2023 00:46:33: disable pruebaexit
+15/04/2023 00:46:35: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 00:46:42: disable Prueba
+15/04/2023 00:47:29: dropAll 't.*'
+15/04/2023 00:47:47: drop_all 't.*'
+15/04/2023 00:48:03: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 00:48:34: drop_all 't.*'
+15/04/2023 00:53:28: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:03:54: describe office
+15/04/2023 01:04:33: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:04:38: describe office
+15/04/2023 01:04:46: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:07:07: describe office
+-----------------------
+Comandos ingresados:
+15/04/2023 01:07:36: describe office
+15/04/2023 01:08:05: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:08:10: describe office
+15/04/2023 01:08:20: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:08:26: describe office
+15/04/2023 01:08:32: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:11:35: describe office
+15/04/2023 01:12:10: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:12:18: describe office
+15/04/2023 01:12:21: clear
+15/04/2023 01:12:21: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:12:43: describe office
+15/04/2023 01:13:05: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:13:13: describe office
+15/04/2023 01:13:21: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:24:22: describe office
+15/04/2023 01:25:37: clear
+15/04/2023 01:25:39: describe office
+15/04/2023 01:26:14: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:26:23: describe office
+15/04/2023 01:26:55: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:27:03: describe office
+15/04/2023 01:27:10: comando
+15/04/2023 01:27:16: clear
+15/04/2023 01:27:17: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:27:52: describe  office
+15/04/2023 01:28:10: clear
+15/04/2023 01:28:13: describe office
+15/04/2023 01:28:38: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:28:47: describe office
+15/04/2023 01:28:51: clear
+15/04/2023 01:28:52: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:29:24: describe office
+15/04/2023 01:30:06: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:30:11: describe office
+15/04/2023 01:30:40: disable office
+15/04/2023 01:30:44: describe office
+15/04/2023 01:31:45: enable office
+15/04/2023 01:31:50: clear
+15/04/2023 01:31:50: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:43:58: drop_all 'office.*'
+15/04/2023 01:44:04: clear
+15/04/2023 01:44:04: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 01:45:03: drop_all 'office.*'
+15/04/2023 01:45:20: drop_all 'officee.*'
+15/04/2023 01:45:25: drop_all 'of.*'
+15/04/2023 01:45:37: drop_all 'Em.*'
+15/04/2023 01:45:42: drop_all 'office'
+15/04/2023 01:45:57: clear
+15/04/2023 01:49:01: drop_all '^office$'
+15/04/2023 01:49:10: clear
+15/04/2023 01:49:11: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 02:02:18: rop_all 'test.*'
+15/04/2023 02:02:28: drop_all 'office.*'
+15/04/2023 02:02:56: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 02:04:00: drop_all 'test.*'
+15/04/2023 02:04:08: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 02:07:19: drop_all 'test.*'
+15/04/2023 02:07:48: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 02:07:58: drop_all 'test.*'
+15/04/2023 02:08:10: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 02:15:09: drop_all 'test.*'
+15/04/2023 02:15:35: clear
+15/04/2023 02:15:35: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 02:17:25: drop_all 'test.*'
+15/04/2023 02:17:41: clear
+15/04/2023 02:17:42: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 02:19:32: drop_all 'Juan.*'
+15/04/2023 02:19:40: list
+15/04/2023 02:19:49: describe test1
+15/04/2023 02:20:08: clear
+15/04/2023 02:20:09: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 10:30:26: create
+15/04/2023 10:30:36: exit a
+15/04/2023 10:30:40: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 10:31:32: exit aaa
+15/04/2023 10:31:36: prjueba
+15/04/2023 10:31:51: create
+15/04/2023 10:31:55: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 10:36:22: create
+15/04/2023 10:36:27: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 10:37:16: create
+15/04/2023 10:37:27: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 10:40:41: list pruebas
+15/04/2023 10:40:45: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 10:41:12: list pp
+15/04/2023 10:41:21: list 
+15/04/2023 10:41:25: list  
+15/04/2023 10:41:33: list prueba pp
+15/04/2023 10:41:37: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 11:33:40: create a
+15/04/2023 11:33:44: create 
+15/04/2023 11:33:48: clear
+15/04/2023 11:33:49: create
+15/04/2023 11:34:13: list a
+15/04/2023 11:34:16: list
+15/04/2023 11:34:18: clear
+15/04/2023 11:34:20: disable
+15/04/2023 11:34:24: enable
+15/04/2023 11:34:32: is_enabled
+15/04/2023 11:34:54: alter
+15/04/2023 11:35:22: drop
+15/04/2023 11:35:43: drop_all
+15/04/2023 11:35:47: describe
+15/04/2023 11:36:03: clear
+15/04/2023 11:36:04: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 11:36:16: create
+15/04/2023 11:36:19: list a
+15/04/2023 11:36:24: disable
+15/04/2023 11:36:25: enable
+15/04/2023 11:36:30: is_enabled
+15/04/2023 11:36:33: alter
+15/04/2023 11:36:50: drop
+15/04/2023 11:36:56: drop_all
+15/04/2023 11:37:00: describe
+15/04/2023 11:37:05: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 11:39:26: create 'tabal'
+15/04/2023 11:39:31: clear
+15/04/2023 11:39:31: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 11:41:15: alter 'Tabla2', 'delete' => 
+15/04/2023 11:42:17: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 11:42:24: alter 'Tabla2', 'delete' => 
+15/04/2023 11:42:36: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 11:42:54: alter 'Tabla2', 'delete' => 
+15/04/2023 11:43:09: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 11:43:15: alter 'Tabla2', 'delete' => 
+15/04/2023 11:43:25: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 11:43:50: alter 'Tabla2',  => 'ColumnFamilies'
+15/04/2023 11:43:56: alter 'Tabla2', 'delete' 'ColumnFamilies'
+15/04/2023 11:44:02: alter , 'delete' => 'ColumnFamilies'
+15/04/2023 11:44:12: clear
+15/04/2023 11:44:13: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 11:50:34: create 'employees', 
+15/04/2023 11:50:53: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 11:51:18: create 'employees', 
+15/04/2023 11:51:20: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 11:52:35: create 'employees', 
+15/04/2023 11:52:49: create 'employees', ' '
+15/04/2023 11:53:31: exit
+-----------------------
+Comandos ingresados:
+15/04/2023 11:53:39: create 'employees', ' '
+15/04/2023 11:54:04: exit
