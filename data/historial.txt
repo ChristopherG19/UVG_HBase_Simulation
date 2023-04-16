@@ -1480,3 +1480,48 @@ Comandos ingresados:
 16/04/2023 16:25:56: count 'EmployeesB'
 16/04/2023 16:28:28: truncate 'office'
 16/04/2023 16:28:34: exit
+-----------------------
+Comandos ingresados:
+16/04/2023 17:21:51: truncate
+-----------------------
+Comandos ingresados:
+16/04/2023 17:25:32: scan
+16/04/2023 17:25:39: scan Employees
+-----------------------
+Comandos ingresados:
+-----------------------
+Comandos ingresados:
+16/04/2023 17:26:11: scan
+16/04/2023 17:26:20: scan Employees
+-----------------------
+Comandos ingresados:
+16/04/2023 17:27:14: scan
+16/04/2023 17:27:18: scan Employees
+-----------------------
+Comandos ingresados:
+16/04/2023 17:27:41: scan
+16/04/2023 17:27:45: scan Employees
+-----------------------
+Comandos ingresados:
+16/04/2023 17:28:36: scan
+16/04/2023 17:28:39: scan Employees
+-----------------------
+Comandos ingresados:
+16/04/2023 17:29:48: scan
+16/04/2023 17:29:58: scan Employees
+16/04/2023 17:30:25: scan EmployeesB
+-----------------------
+Comandos ingresados:
+16/04/2023 17:32:56: put
+-----------------------
+Comandos ingresados:
+16/04/2023 17:33:51: get
+16/04/2023 17:33:52: put
+16/04/2023 17:33:54: get
+16/04/2023 17:33:57: scan
+16/04/2023 17:34:03: truncate
+16/04/2023 17:34:06: delete
+16/04/2023 17:34:09: deleteall
+-----------------------
+Comandos ingresados:
+16/04/2023 17:35:02: put

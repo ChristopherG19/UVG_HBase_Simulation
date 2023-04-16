@@ -84,10 +84,9 @@ def put(command, data):
     data_string = json.dumps(data)
     return (data_string, "")
 
-def get(command, data):
-    start_time = time.time()
+def get(command, data, cantFilas):
+    
     ret = ""
-    cantFilas = 0
 
     try:
         # conseguimos los atributos del commando
@@ -95,7 +94,7 @@ def get(command, data):
         command[1]
     
     except:
-        return "get '<table name>', 'row id' \n"
+        return "get '<table name>', 'row id' \n", cantFilas
 
     try:
         arguments = command[1].strip().split(",")
@@ -105,7 +104,7 @@ def get(command, data):
         rowID = arguments[1].strip().strip("'")
 
     except:
-        return "Sintaxis inválida: Argumentos faltantes \n"
+        return "Sintaxis inválida: Argumentos faltantes \n", cantFilas
     
 
     # conseguir region
@@ -119,17 +118,17 @@ def get(command, data):
 
     # Verificar existencia de tabla
     if region == "":
-        return "La tabla no existe\n"
+        return "La tabla no existe\n", cantFilas
 
     # verificar disponilbilidad
     if data[region][tableName]["enabled"] != "True":
-        return "La tabla no está disponible\t"
+        return "La tabla no está disponible\t", cantFilas
     
     # verificar existencia del row
     try:
         data[region][tableName]["rows"][rowID]
     except:
-        return "La row ID ingresada no existe \n"
+        return "La row ID ingresada no existe \n", cantFilas
     
     ret += "COLUMN\t\t\tCELL\n"
     
@@ -141,22 +140,17 @@ def get(command, data):
             ", value=" + data[region][tableName]["rows"][rowID][columnFamily][columnName]["value"] +\
             "\n"
 
-    end_time = time.time()
-    ret+= "\n"
-    ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
-    return ret
+    return ret, cantFilas
 
-def scan(command, data):
-    start_time = time.time()
+def scan(command, data, cantFilas):
     ret = ""
-    cantFilas = 0
 
     try:
         command = command.split(" ")
         tableName = command[1].strip().strip("'")
 
     except:
-        return "scan '<table name>\n"
+        return "scan '<table name>\n", cantFilas
 
     ret += "ROW\t\tCOLUMN+CELL\n"
 
@@ -171,11 +165,11 @@ def scan(command, data):
 
     # Verificar existencia de tabla
     if region == "":
-        return "La tabla no existe\n"
+        return "La tabla no existe\n", cantFilas
 
     # verificar disponilbilidad
     if data[region][tableName]["enabled"] != "True":
-        return "La tabla no está disponible\t"
+        return "La tabla no está disponible\t", cantFilas
     
     rows = "rows"
 
@@ -191,13 +185,9 @@ def scan(command, data):
                 "\n"
 
                 ret += retorno
+                cantFilas += 1
 
-
-
-    end_time = time.time()
-    ret+= "\n"
-    ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
-    return ret
+    return ret, cantFilas
 
 def delete(command, data):
     
