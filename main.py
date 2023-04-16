@@ -96,7 +96,7 @@ class HBaseSimulator:
                     self.show_results(cmdLine)
             
             if(cm == "create"):
-                timestamp = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
+                timestamp = time.time() * 1000
                 n = len(data) + 1
                 nameRegion = "Region"+str(n)
                 start_time = time.time()
@@ -136,7 +136,7 @@ class HBaseSimulator:
                     self.show_results(result)
 
             elif(cm == "disable"):
-                timestamp = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
+                timestamp = time.time() * 1000
                 start_time = time.time()  
                 resultDisable, TableName, newData = disableTable(data, command, timestamp)
                 if(TableName != None):
@@ -154,7 +154,7 @@ class HBaseSimulator:
                     self.show_results(result)
                 
             elif(cm == "enable"):
-                timestamp = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
+                timestamp = time.time() * 1000
                 start_time = time.time()  
                 resultEnable, TableName, newData = enableTable(data, command, timestamp)
                 if(TableName != None):
@@ -173,15 +173,21 @@ class HBaseSimulator:
             
             elif(cm == "is_enabled"):
                 start_time = time.time()  
-                isEnabled = checkStatus(data, command)
-                end_time = time.time()
-                tiempo = end_time - start_time
-                formato = "Formato: is_enabled '<table name>'"
-                result = f"{isEnabled}\n{formato}\n0 row(s) in {tiempo} seconds"
-                self.show_results(result)
+                isEnabled, result = checkStatus(data, command)
+                if(result != None):
+                    end_time = time.time()
+                    tiempo = end_time - start_time
+                    result = f"{isEnabled}\n0 row(s) in {tiempo} seconds"
+                    self.show_results(result)
+                else:
+                    end_time = time.time()
+                    tiempo = end_time - start_time
+                    formato = "Formato: is_enabled '<table name>'"
+                    result = f"{formato}\n0 row(s) in {tiempo} seconds"
+                    self.show_results(result)
             
             elif(cm == "alter"):
-                timestamp = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
+                timestamp = time.time() * 1000
                 start_time = time.time()  
                 alterData, action, cf, tname, newtname = alterTable(data, command, timestamp)
                 if(tname != None):
@@ -248,7 +254,7 @@ class HBaseSimulator:
                 if(cmRes != None):
                     end_time = time.time()
                     tiempo = end_time - start_time
-                    result = f"{result}{tiempo} seconds"
+                    result = f"{result}{rows} row(s) in {tiempo} seconds"
                     self.show_results(result)
                 else:
                     end_time = time.time()

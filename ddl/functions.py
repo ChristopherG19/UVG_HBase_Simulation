@@ -112,7 +112,7 @@ def checkStatus(Hfiles, command):
     
     TableName = get_info(command)[0]
     if(TableName == None):
-        return get_info(command)[1]
+        return (get_info(command)[1], TableName)
     
     isEnabled = False
     
@@ -121,11 +121,11 @@ def checkStatus(Hfiles, command):
             if(TableName == table):
                 if "enabled" in Hfiles[region][table]:
                     if (Hfiles[region][table]["enabled"] == "True"):
-                        return not isEnabled
+                        return (not isEnabled, TableName)
                     else:
-                        return isEnabled
+                        return (isEnabled, TableName)
                 
-    return isEnabled
+    return (isEnabled, TableName)
 
 def alterTable(Hfiles, command, timestamp):
     TableName, CommandInfo = get_info(command)[0], [x.strip() for x in get_info(command)[1]][1]
@@ -172,7 +172,7 @@ def dropTable(Hfiles, command):
     if(not exists(Hfiles, command)):
         return (f"Table {TableName} not found, no changes", Hfiles, TableName)
     
-    veri = checkStatus(Hfiles, command)
+    veri, res = checkStatus(Hfiles, command)
     
     if(not veri == False):
         return (f"{TableName} is not disabled, not changes", Hfiles, TableName)

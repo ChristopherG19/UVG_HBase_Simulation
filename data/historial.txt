@@ -1403,3 +1403,80 @@ Comandos ingresados:
 15/04/2023 23:41:00: describe 'EmployeesB'
 15/04/2023 23:41:11: scan Employees
 15/04/2023 23:41:34: exit
+-----------------------
+Comandos ingresados:
+16/04/2023 15:44:16: create 'office', 'data', 'data2'
+16/04/2023 15:44:50: list
+16/04/2023 15:45:02: disable 'office'
+16/04/2023 15:45:12: is_enabled 'office'
+16/04/2023 15:48:14: exit
+-----------------------
+Comandos ingresados:
+16/04/2023 15:48:27: enable 'office'
+16/04/2023 15:48:31: list
+16/04/2023 15:48:41: is_enabled 'office'
+16/04/2023 15:48:50: disable  'office'
+16/04/2023 15:49:36: disable 'office'
+16/04/2023 15:49:53: is_enabled 'office'
+16/04/2023 15:49:58: enable 'office'
+16/04/2023 15:50:06: is_enabled 'office'
+16/04/2023 15:50:08: clear
+16/04/2023 15:51:04: alter 'office', 'delete' => 'data2'
+16/04/2023 15:51:50: alter 'office', 'ModifyName' => 'data', 'data2'
+16/04/2023 15:52:33: drop 'office'
+16/04/2023 15:52:42: disable 'office'
+16/04/2023 15:52:45: drop 'office'
+16/04/2023 15:54:26: clear
+16/04/2023 15:54:27: exit
+-----------------------
+Comandos ingresados:
+16/04/2023 15:54:35: drop 'office'
+16/04/2023 15:55:04: create 'office', 'data', 'data2'
+16/04/2023 15:56:50: list
+16/04/2023 15:56:57: drop_all 'test.*'
+16/04/2023 16:01:10: describe 'office'
+16/04/2023 16:02:04: exit
+-----------------------
+Comandos ingresados:
+16/04/2023 16:02:11: describe 'office'
+16/04/2023 16:02:49: exir
+16/04/2023 16:02:50: exit
+-----------------------
+Comandos ingresados:
+16/04/2023 16:02:56: describe 'office'
+16/04/2023 16:03:32: exit
+-----------------------
+Comandos ingresados:
+16/04/2023 16:03:39: describe 'office'
+16/04/2023 16:04:32: exit
+-----------------------
+Comandos ingresados:
+16/04/2023 16:04:54: describe 'office'
+16/04/2023 16:05:25: describe 'office'
+16/04/2023 16:05:51: describe 'office'
+16/04/2023 16:05:54: clear
+16/04/2023 16:05:55: exit
+-----------------------
+Comandos ingresados:
+16/04/2023 16:15:36: put
+16/04/2023 16:16:21: put 'office', '0', 'data2:newCol', '1'
+16/04/2023 16:19:08: put 'office', '0', 'data2:newCol', 'NuevoDato'
+16/04/2023 16:19:13: exit
+-----------------------
+Comandos ingresados:
+16/04/2023 16:19:36: get
+16/04/2023 16:19:57: get 'EmployeesB', '2'
+16/04/2023 16:21:01: scan
+16/04/2023 16:21:08: scan 'EmployeesB'
+16/04/2023 16:21:19: delete
+16/04/2023 16:23:05: delete 'Employees', '2', 'nmm:xd'
+16/04/2023 16:23:13: delete 'EmployeesB', '2', 'nmm:pero'
+16/04/2023 16:23:42: delete 'EmployeesB', '2', 'loco:xd'
+16/04/2023 16:23:47: clear
+16/04/2023 16:24:38: delete 'EmployeesB', '2', 'nmm:xd'
+16/04/2023 16:25:01: deleteall
+16/04/2023 16:25:26: deleteall 'EmployeesB', '1'
+16/04/2023 16:25:40: count
+16/04/2023 16:25:56: count 'EmployeesB'
+16/04/2023 16:28:28: truncate 'office'
+16/04/2023 16:28:34: exit
