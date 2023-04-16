@@ -1525,3 +1525,23 @@ Comandos ingresados:
 -----------------------
 Comandos ingresados:
 16/04/2023 17:35:02: put
+-----------------------
+Comandos ingresados:
+16/04/2023 17:37:34: truncate
+-----------------------
+Comandos ingresados:
+16/04/2023 17:40:08: count
+-----------------------
+Comandos ingresados:
+16/04/2023 17:40:27: count
+-----------------------
+Comandos ingresados:
+16/04/2023 17:42:20: cant 'Employees'
+16/04/2023 17:42:31: count 'Employees'
+-----------------------
+Comandos ingresados:
+16/04/2023 17:42:59: count 'Employees'
+16/04/2023 17:43:04: count
+16/04/2023 17:43:10: get
+16/04/2023 17:43:18: get dkfj, dkf
+16/04/2023 17:43:56: get 'EmployeesB, '1'

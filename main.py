@@ -365,7 +365,16 @@ class HBaseSimulator:
                 self.show_results(commandOutput)
                 
             elif (cm == "count"):
-                commandOutput = countF(command, data)
+                start_time = time.time()
+                commandOutput = ""
+                cantFilas = 0
+
+                cmdOutput, cantFilas = countF(command, data, cantFilas)
+                commandOutput += cmdOutput
+                
+                end_time = time.time()
+                commandOutput+= "\n"
+                commandOutput += f"{cantFilas} fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
                 self.show_results(commandOutput)
                 
             elif (cm == "truncate"):
@@ -378,8 +387,6 @@ class HBaseSimulator:
                     commandOutput = errmsg
 
                     end_time = time.time()
-                    commandOutput+= "\n"
-                    commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
 
                 else: 
                     data = json.loads(newData)
@@ -388,9 +395,9 @@ class HBaseSimulator:
                         json.dump(data, f, indent= 4)
 
                     end_time = time.time()
-                    commandOutput+= "\n"
-                    commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
-
+                    
+                commandOutput+= "\n"
+                commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
                 self.show_results(commandOutput)
 
             else:

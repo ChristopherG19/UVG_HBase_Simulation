@@ -85,7 +85,7 @@ def put(command, data):
     return (data_string, "")
 
 def get(command, data, cantFilas):
-    
+
     ret = ""
 
     try:
@@ -314,8 +314,7 @@ def deleteAll(command, data):
 
     return (data_string, "")
 
-def countF(command, data):
-    start_time = time.time()
+def countF(command, data, cantFilas):
     ret = ""
 
     try:
@@ -323,7 +322,7 @@ def countF(command, data):
         tableName = command[1].strip().strip("'")
 
     except:
-        return "count '<table name>'\n"
+        return "count '<table name>'\n", cantFilas
     
     # conseguir region
     region = ""
@@ -336,11 +335,11 @@ def countF(command, data):
 
     # Verificar existencia de tabla
     if region == "":
-        return "La tabla no existe\n"
+        return "La tabla no existe\n", cantFilas
 
     # verificar disponilbilidad
     if data[region][tableName]["enabled"] != "True":
-        return "La tabla no está disponible\t"
+        return "La tabla no está disponible\t", cantFilas
     
     cantData = 0
     for row in data[region][tableName]["rows"]:
@@ -350,12 +349,9 @@ def countF(command, data):
                     cantData += 1
 
     ret += "\n" + str(cantData) + "\n"
+    cantFilas = 1
 
-
-    end_time = time.time()
-    ret+= "\n"
-    ret += "1 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
-    return ret
+    return ret, cantFilas
 
 def truncate(command, data):
     
@@ -383,8 +379,13 @@ def truncate(command, data):
     if data[region][tableName]["enabled"] != "True":
         return True, "La tabla no está disponible\t"
     
+    # copiar data
+    copy = data[region][tableName]
+
     # Eliminar info de la tabla
     del data[region][tableName]
+
+    # Volver a crear data
 
     data_string = json.dumps(data)
 
