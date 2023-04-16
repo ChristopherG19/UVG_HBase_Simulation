@@ -115,11 +115,5 @@
             }
         }
     },
-    "Region3": {
-        "Tabla3": {
-            "enabled": "False",
-            "timestamp": "ddd",
-            "rows": {}
-        }
-    }
+    "Region3": {}
 }

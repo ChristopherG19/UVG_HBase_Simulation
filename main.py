@@ -1,5 +1,9 @@
-
-# 
+# UNIVERSIDAD DEL VALLE DE GUATEMALA
+# FACULTAD DE INGENIERÍA
+# DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN
+# BASES DE DATOS 2
+# CHRISTOPHER GARCÍA 20541
+# MARIA ISABEL SOLANO 20504
 
 import tkinter as tk
 import json
@@ -185,7 +189,24 @@ class HBaseSimulator:
                 self.output_text.insert(tk.END, commandOutput)
                 
             elif (cm == "truncate"):
-                commandOutput = truncate(command, data)
+                start_time = time.time()
+                commandOutput = ""
+
+                newData, errmsg = truncate(command, data)
+
+                if (type(newData) != str):
+                    commandOutput = errmsg
+
+                else: 
+                    data = json.loads(newData)
+
+                    with open(self.db, 'w') as f:
+                        json.dump(data, f, indent= 4)
+
+                    end_time = time.time()
+                    commandOutput+= "\n"
+                    commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+
                 self.output_text.insert(tk.END, commandOutput)
 
             else:

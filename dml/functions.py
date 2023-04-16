@@ -6,7 +6,7 @@ def put(command, data):
     try:
         # conseguimos los atributos del commando
         command = command.split(" ", 1)
-        print(command[1])
+        command[1]
     
     except:
         return True, "put '<table name>', 'row id', '<colfamily:colname>','<value>' \n"
@@ -16,20 +16,14 @@ def put(command, data):
 
         # Conseguimos cada uno de los atributos
         tableName = arguments[0].strip().strip("'")
-        print(tableName)
         rowID = arguments[1].strip().strip("'")
-        print(rowID)
         info = arguments[2].strip().strip("'")
-        print(info)
 
         col = info.split(":")
         colFam = col[0].strip().strip("'")
-        print(colFam)
         colName = col[1].strip().strip("'")
-        print(colName)
 
         value = arguments[3].strip().strip("'")
-        print(value)
 
     except:
         return True, "Sintaxis inválida: Argumentos faltantes \n"
@@ -42,7 +36,6 @@ def put(command, data):
             if y == tableName:
                 region = x 
 
-    print("region: " + region)
 
     # Verificar existencia de tabla
     if region == "":
@@ -100,7 +93,7 @@ def get(command, data):
     try:
         # conseguimos los atributos del commando
         command = command.split(" ", 1)
-        print(command[1])
+        command[1]
     
     except:
         return "get '<table name>', 'row id' \n"
@@ -109,10 +102,8 @@ def get(command, data):
         arguments = command[1].strip().split(",")
 
         tableName = arguments[0].strip().strip("'")
-        print(tableName)
 
         rowID = arguments[1].strip().strip("'")
-        print(rowID)
 
     except:
         return "Sintaxis inválida: Argumentos faltantes \n"
@@ -126,7 +117,6 @@ def get(command, data):
             if y == tableName:
                 region = x 
 
-    print("region: " + region)
 
     # Verificar existencia de tabla
     if region == "":
@@ -165,7 +155,6 @@ def scan(command, data):
     try:
         command = command.split(" ")
         tableName = command[1].strip().strip("'")
-        print(tableName)
 
     except:
         return "scan '<table name>\n"
@@ -180,7 +169,6 @@ def scan(command, data):
             if y == tableName:
                 region = x 
 
-    print("region: " + region)
 
     # Verificar existencia de tabla
     if region == "":
@@ -195,7 +183,6 @@ def scan(command, data):
     for fila in data[region][tableName][rows]:
         for columnFamily in data[region][tableName][rows][fila]:
             for columnName in data[region][tableName][rows][fila][columnFamily]:
-                print("fila ", fila, type(fila))
                 retorno = "" + \
                 str(fila) + \
                 "\t\tColumn=" + \
@@ -218,7 +205,7 @@ def delete(command, data):
     try:
         # conseguimos los atributos del commando
         command = command.split(" ", 1)
-        print(command[1])
+        command[1]
     
     except:
         return True, "delete '<table name>', 'row id', '<colfamily:colname>' \n"
@@ -228,17 +215,12 @@ def delete(command, data):
 
         # Conseguimos cada uno de los atributos
         tableName = arguments[0].strip().strip("'")
-        print(tableName)
         rowID = arguments[1].strip().strip("'")
-        print(rowID)
         info = arguments[2].strip().strip("'")
-        print(info)
 
         col = info.split(":")
         colFam = col[0].strip().strip("'")
-        print(colFam)
         colName = col[1].strip().strip("'")
-        print(colName)
 
 
     except:
@@ -252,7 +234,6 @@ def delete(command, data):
             if y == tableName:
                 region = x 
 
-    print("region: " + region)
 
     # Verificar existencia de tabla
     if region == "":
@@ -296,23 +277,20 @@ def deleteAll(command, data):
     try:
         # conseguimos los atributos del commando
         command = command.split(" ", 1)
-        print(command[1])
+        command[1]
     
     except:
-        return "deleteall '<table name>', '<row>' \n"
+        return True, "deleteall '<table name>', '<row>' \n"
 
     try: 
         arguments = command[1].strip().split(",")
-        print(arguments)
 
         tableName = arguments[0].strip().strip("'")
-        print(tableName)
 
         rowID = arguments[1].strip().strip("'")
-        print(rowID)
 
     except:
-        return "Sintaxis inválida: Argumentos faltantes \n"
+        return True, "Sintaxis inválida: Argumentos faltantes \n"
     
 # conseguir region
     region = ""
@@ -321,8 +299,6 @@ def deleteAll(command, data):
         for y in data[x]:
             if y == tableName:
                 region = x 
-
-    print("region: " + region)
 
     # Verificar existencia de tabla
     if region == "":
@@ -356,7 +332,6 @@ def countF(command, data):
     try:
         command = command.split(" ")
         tableName = command[1].strip().strip("'")
-        print(tableName)
 
     except:
         return "count '<table name>'\n"
@@ -369,7 +344,6 @@ def countF(command, data):
             if y == tableName:
                 region = x 
 
-    print("region: " + region)
 
     # Verificar existencia de tabla
     if region == "":
@@ -395,24 +369,34 @@ def countF(command, data):
     return ret
 
 def truncate(command, data):
-    start_time = time.time()
-    ret = ""
-
+    
     try:
         command = command.split(" ")
-        tableName = command[1]
-        print(tableName)
+        tableName = command[1].strip().strip("'")
 
     except:
-        return "truncate '<table name>'\n"
+        return True, "truncate '<table name>'\n"
     
-    # TODO: real put
+    # conseguir region
+    region = ""
 
-    # if enabled
-    # else: return "Tabla no está hablitada"
+    for x in data:
+        for y in data[x]:
+            if y == tableName:
+                region = x 
 
 
-    end_time = time.time()
-    ret+= "\n"
-    ret += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
-    return ret
+    # Verificar existencia de tabla
+    if region == "":
+        return True, "La tabla no existe\n"
+
+    # verificar disponilbilidad
+    if data[region][tableName]["enabled"] != "True":
+        return True, "La tabla no está disponible\t"
+    
+    # Eliminar info de la tabla
+    del data[region][tableName]
+
+    data_string = json.dumps(data)
+
+    return (data_string, "")

@@ -486,3 +486,37 @@ Comandos ingresados:
 Comandos ingresados:
 2023/04/15 19:55:02: deleteall 'Employees', 'tonto'
 2023/04/15 19:56:35: deleteall 'Employees', 'tonto'
+-----------------------
+Comandos ingresados:
+2023/04/15 20:02:43: truncate
+-----------------------
+Comandos ingresados:
+2023/04/15 20:03:18: truncate
+-----------------------
+Comandos ingresados:
+2023/04/15 20:03:55: truncate
+-----------------------
+Comandos ingresados:
+2023/04/15 20:06:53: truncate 'Tabla3'
+-----------------------
+Comandos ingresados:
+2023/04/15 20:08:00: truncate 'Tabla3'
+2023/04/15 20:08:37: truncate 'Tabla3'
+2023/04/15 20:09:22: truncate 'dfdf'
+-----------------------
+Comandos ingresados:
+2023/04/15 20:12:49: put
+2023/04/15 20:12:55: delete
+2023/04/15 20:12:57: deleteall
+-----------------------
+Comandos ingresados:
+2023/04/15 20:13:18: deleteall
+-----------------------
+Comandos ingresados:
+2023/04/15 20:13:31: deleteall
+2023/04/15 20:13:39: truncate
+2023/04/15 20:13:44: count
+2023/04/15 20:13:48: put
+2023/04/15 20:13:49: get
+2023/04/15 20:13:52: delete
+2023/04/15 20:14:08: scan
