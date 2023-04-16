@@ -334,3 +334,139 @@ Comandos ingresados:
 Comandos ingresados:
 2023/04/15 17:00:40: put 'Employees', '2', 'nmm:mmn', 'lol'
 2023/04/15 17:00:53: put 'Employees', '3', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 17:25:58: put 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 17:26:06: put 'Employees', '2', 'nmm:mmn'
+2023/04/15 17:26:19: put 'Employees', '2', 'nmmmmn', 'lol'
+2023/04/15 17:26:39: put 'Employees', '2', 'loco:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 17:27:20: put
+-----------------------
+Comandos ingresados:
+2023/04/15 17:28:17: delete
+-----------------------
+Comandos ingresados:
+2023/04/15 17:29:04: put 'Employees', '2', 'nmm:mmn', 'lol'
+2023/04/15 17:29:09: delete
+-----------------------
+Comandos ingresados:
+2023/04/15 17:30:37: delete
+2023/04/15 17:30:41: delete
+-----------------------
+Comandos ingresados:
+2023/04/15 17:31:02: delete
+2023/04/15 17:31:08: delete eke,kekeke
+-----------------------
+Comandos ingresados:
+2023/04/15 17:39:10: put 'Employees', '2', 'nmm:mmn', 'lol'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:27:42: delete
+2023/04/15 18:28:08: delete 'Employees', '2', 'loco:mmn'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:29:17: delete 'Employees', '2', 'loco:mmn'
+2023/04/15 18:29:37: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:31:04: scan 'Employees'
+2023/04/15 18:32:43: scan 'Employees'
+2023/04/15 18:32:44: scan 'Employees'
+2023/04/15 18:32:44: scan 'Employees'
+2023/04/15 18:32:45: scan 'Employees'
+2023/04/15 18:32:45: scan 'Employees'
+2023/04/15 18:32:45: scan 'Employees'
+2023/04/15 18:32:45: scan 'Employees'
+2023/04/15 18:32:45: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:33:30: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:34:14: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:35:00: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:35:51: TypeError: can only concatenate str (not "float") to str      
+
+2023/04/15 18:35:57: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:36:42: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:39:14: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:41:31: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:41:52: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:42:13: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:42:58: scan 'Employees'
+2023/04/15 18:44:20: 'Employees', '2', 'loco:mmn', 'lol'
+2023/04/15 18:44:27: put 'Employees', '2', 'loco:mmn', 'lol'
+2023/04/15 18:44:59: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:46:32: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:52:23: scan 'Employees'
+2023/04/15 18:53:50: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:54:49: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:55:22: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:56:02: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:58:42: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 18:59:19: scan 'Employees'
+2023/04/15 19:00:55: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 19:01:37: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 19:06:17: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 19:07:01: rows
+2023/04/15 19:07:08: put 'Employees', '2', 'loco:mmn', 'lol'
+2023/04/15 19:07:18: scan 'Employees'
+2023/04/15 19:09:11: put 'Employees', 'tonto', 'loco:mmn', 'lol'
+2023/04/15 19:13:51: scan 'Employees'
+2023/04/15 19:15:53: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 19:16:30: scan 'Employee'
+2023/04/15 19:16:42: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 19:18:03: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 19:19:13: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 19:20:32: scan 'Employees'
+-----------------------
+Comandos ingresados:
+2023/04/15 19:35:16: delete
+2023/04/15 19:36:05: delete 'Employees', '2', 'nmm:pero'
+2023/04/15 19:36:30: delete 'Employees', '2', 'nmm:peeeero'

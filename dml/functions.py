@@ -9,7 +9,7 @@ def put(command, data):
         print(command[1])
     
     except:
-        return "put '<table name>', 'row id', '<colfamily:colname>','<value>' \n"
+        return True, "put '<table name>', 'row id', '<colfamily:colname>','<value>' \n"
 
     try: 
         arguments = command[1].split(",")
@@ -32,7 +32,7 @@ def put(command, data):
         print(value)
 
     except:
-        return "Sintaxis inválida: Argumentos faltantes \n"
+        return True, "Sintaxis inválida: Argumentos faltantes \n"
     
     # conseguir region
     region = ""
@@ -46,11 +46,11 @@ def put(command, data):
 
     # Verificar existencia de tabla
     if region == "":
-        return "La tabla no existe\n"
+        return True, "La tabla no existe\n"
 
     # verificar disponilbilidad
     if data[region][tableName]["enabled"] != "True":
-        return "La tabla no está disponible\t"
+        return True, "La tabla no está disponible\t"
     
     # verificar si existe rowID
     try:
@@ -85,10 +85,12 @@ def put(command, data):
             }
         }
 
+    # modificar timestamp de la tabla
+    data[region][tableName]["timestamp"] = time.time() * 1000
 
     data_string = json.dumps(data)
 
-    return (data_string)
+    return (data_string, "")
 
 def get(command, data):
     start_time = time.time()
@@ -146,7 +148,7 @@ def get(command, data):
         for columnName in data[region][tableName]["rows"][rowID][columnFamily]:
             cantFilas += 1
             ret += columnFamily + ":" + columnName +\
-            "\ttimestamp=" + data[region][tableName]["rows"][rowID][columnFamily][columnName]["Timestamp"] +\
+            "\ttimestamp=" + str(data[region][tableName]["rows"][rowID][columnFamily][columnName]["Timestamp"]) +\
             ", value=" + data[region][tableName]["rows"][rowID][columnFamily][columnName]["value"] +\
             "\n"
 
@@ -187,15 +189,24 @@ def scan(command, data):
     # verificar disponilbilidad
     if data[region][tableName]["enabled"] != "True":
         return "La tabla no está disponible\t"
+    
+    rows = "rows"
 
-    for row in data[region][tableName]["rows"]:
-        for columnFamily in data[region][tableName]["rows"][row]:
-            for columnName in data[region][tableName]["rows"][row][columnFamily]:    
-                ret +=row + "\t\t" + "Column="+\
-                columnFamily+":"+columnName+\
-                ", timestamp="+data[region][tableName]["rows"][row][columnFamily][columnName]["Timestamp"]+\
-                ", value="+data[region][tableName]["rows"][row][columnFamily][columnName]["value"]+\
+    for fila in data[region][tableName][rows]:
+        for columnFamily in data[region][tableName][rows][fila]:
+            for columnName in data[region][tableName][rows][fila][columnFamily]:
+                print("fila ", fila, type(fila))
+                retorno = "" + \
+                str(fila) + \
+                "\t\tColumn=" + \
+                columnFamily + ":" +columnName +\
+                ", timestamp=" + str(data[region][tableName][rows][fila][columnFamily][columnName]["Timestamp"]) +\
+                ", value=" + data[region][tableName][rows][fila][columnFamily][columnName]["value"] +\
                 "\n"
+
+                ret += retorno
+
+
 
     end_time = time.time()
     ret+= "\n"
@@ -203,47 +214,82 @@ def scan(command, data):
     return ret
 
 def delete(command, data):
-    start_time = time.time()
-    ret = ""
-    cantFilas = 0
-
+    
     try:
         # conseguimos los atributos del commando
         command = command.split(" ", 1)
         print(command[1])
     
     except:
-        return "delete '<table name>', '<row>', '<column name >', '<time stamp>' \n"
+        return True, "delete '<table name>', 'row id', '<colfamily:colname>' \n"
 
     try: 
         arguments = command[1].split(",")
-        print(arguments)
 
-        tableName = arguments[0].strip("'")
+        # Conseguimos cada uno de los atributos
+        tableName = arguments[0].strip().strip("'")
         print(tableName)
+        rowID = arguments[1].strip().strip("'")
+        print(rowID)
+        info = arguments[2].strip().strip("'")
+        print(info)
 
-        row = arguments[1].strip("'")
-        print(row)
+        col = info.split(":")
+        colFam = col[0].strip().strip("'")
+        print(colFam)
+        colName = col[1].strip().strip("'")
+        print(colName)
 
-        columnName = arguments[2].strip("'")
-        print(columnName)
-
-        timeStamp = arguments[3].strip("'") 
-        print(timeStamp)
 
     except:
-        return "Sintaxis inválida: Argumentos faltantes \n"
+        return True, "Sintaxis inválida: Argumentos faltantes \n"
     
-    # TODO: real put
+    # conseguir region
+    region = ""
 
-    # if enabled
-    # else: return "Tabla no está hablitada"
+    for x in data:
+        for y in data[x]:
+            if y == tableName:
+                region = x 
+
+    print("region: " + region)
+
+    # Verificar existencia de tabla
+    if region == "":
+        return True, "La tabla no existe\n"
+
+    # verificar disponilbilidad
+    if data[region][tableName]["enabled"] != "True":
+        return True, "La tabla no está disponible\t"
     
+    # verificar si existe rowID
+    try:
+        data[region][tableName]["rows"][rowID]
 
-    end_time = time.time()
-    ret+= "\n"
-    ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
-    return ret
+        # verificar si existe la column family
+        try: 
+            data[region][tableName]["rows"][rowID][colFam]
+
+            try:
+                del data[region][tableName]["rows"][rowID][colFam][colName]
+
+            except:
+                return True, f"ERROR: Column name desconocido {colFam} en tabla {tableName}"
+        
+        except:
+            # no existe column family
+            return True, f"ERROR: Column family desconocida {colFam} en tabla {tableName}"
+
+    except:
+        # no existe rowID
+        return True, f"ERROR: Row ID desconocido {rowID} en tabla {tableName}"
+
+    # modificar timestamp de la tabla
+    data[region][tableName]["timestamp"] = time.time() * 1000
+
+    data_string = json.dumps(data)
+
+    return (data_string, "")
 
 def deleteAll(command, data):
     start_time = time.time()

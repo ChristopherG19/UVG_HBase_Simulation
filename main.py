@@ -113,15 +113,20 @@ class HBaseSimulator:
                 start_time = time.time()
                 commandOutput = ""
 
-                newData = put(command, data)
-                data = json.loads(newData)
+                newData, errmsg = put(command, data)
 
-                with open(self.db, 'w') as f:
-                    json.dump(data, f, indent= 4)
+                if (type(newData) != str):
+                    commandOutput = errmsg
 
-                end_time = time.time()
-                commandOutput+= "\n"
-                commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+                else: 
+                    data = json.loads(newData)
+
+                    with open(self.db, 'w') as f:
+                        json.dump(data, f, indent= 4)
+
+                    end_time = time.time()
+                    commandOutput+= "\n"
+                    commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
 
                 self.output_text.insert(tk.END, commandOutput)
 
@@ -134,7 +139,24 @@ class HBaseSimulator:
                 self.output_text.insert(tk.END, commandOutput)
 
             elif (cm == "delete"):
-                commandOutput = delete(command, data)
+                start_time = time.time()
+                commandOutput = ""
+
+                newData, errmsg = delete(command, data)
+
+                if (type(newData) != str):
+                    commandOutput = errmsg
+
+                else: 
+                    data = json.loads(newData)
+
+                    with open(self.db, 'w') as f:
+                        json.dump(data, f, indent= 4)
+
+                    end_time = time.time()
+                    commandOutput+= "\n"
+                    commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+
                 self.output_text.insert(tk.END, commandOutput)
                 
             elif (cm == "deleteall"):
