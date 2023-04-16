@@ -1,13 +1,23 @@
-
-# 
+# UNIVERSIDAD DEL VALLE DE GUATEMALA
+# FACULTAD DE INGENIERÍA
+# DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN
+# BASES DE DATOS 2
+# CHRISTOPHER GARCÍA 20541
+# MARIA ISABEL SOLANO 20504
 
 import tkinter as tk
 import json
 import datetime
 import os
 
+
+from dml.functions import *
+
 class HBaseSimulator:
     def __init__(self):
+        
+        self.db = "./data/HFile.json"
+        
         self.root = tk.Tk()
         self.root.title("HBase Simulator")
 
@@ -23,12 +33,23 @@ class HBaseSimulator:
 
         self.output_text = tk.Text(self.root, height=20, width=80)
         self.output_text.pack()
+        # self.output_text.config(state=tk.DISABLED)
         
         # Se crea un archivo de historial para tener los comandos ingresados
         self.historial_file = "./data/historial.txt"
         if not os.path.exists(self.historial_file):
             with open(self.historial_file, "w") as f:
+                f.write("-----------------------\n")
                 f.write("Comandos ingresados:\n")
+        else:
+            with open(self.historial_file, "a") as f:
+                f.write("-----------------------\n")
+                f.write("Comandos ingresados:\n")
+                
+    def show_results(self, value):
+        self.output_text.config(state=tk.NORMAL)
+        self.output_text.insert(tk.END, value + "\n")
+        self.output_text.config(state=tk.DISABLED)
 
     def execute_command(self):
         command = self.input_entry.get()
@@ -36,17 +57,19 @@ class HBaseSimulator:
         
         # Se evalua si se limpiará o cerrara la "terminal"
         if command == "clear":
+            self.output_text.config(state=tk.NORMAL)
             self.output_text.delete('1.0', tk.END)
+            self.output_text.config(state=tk.DISABLED)
             
         elif command.lower() == "exit":
             self.root.quit()
 
         # Aquí podrías procesar el comando y obtener los resultados
         # En este ejemplo, simplemente lo mostraremos en la pantalla
-        prueba = None
-        with open("./data/HFile.json") as archivo:
+        data = None
+        with open(self.db) as archivo:
             # Se leen Regions con HFiles
-            prueba = json.load(archivo)
+            data = json.load(archivo)
 
             cs = command.split(" ")
             cm = cs[0].lower() # Comando Separado
@@ -55,11 +78,22 @@ class HBaseSimulator:
             with open(self.historial_file, "a") as f:
                 f.write(f"{timestamp}: {command}\n")
 
+            print(cm)
+
             if(cm == "create"):
-                pass
+                timestamp = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
+                n = len(data) + 1
+                nameRegion = "Region"+str(n)
+
+                
+                # escribir el diccionario actualizado en el archivo JSON
+                with open(self.db, 'w') as f:
+                    json.dump(data, f, indent=4)
+
+                #print(json.dumps(newHfile, indent=4))
 
             elif(cm == "list"):
-                pass  
+                pass
 
             elif(cm == "disable"):
                 pass  
@@ -80,25 +114,100 @@ class HBaseSimulator:
                 self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
 
             elif (cm == "put"):
-                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+                start_time = time.time()
+                commandOutput = ""
+
+                newData, errmsg = put(command, data)
+
+                if (type(newData) != str):
+                    commandOutput = errmsg
+
+                else: 
+                    data = json.loads(newData)
+
+                    with open(self.db, 'w') as f:
+                        json.dump(data, f, indent= 4)
+
+                    end_time = time.time()
+                    commandOutput+= "\n"
+                    commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+
+                self.output_text.insert(tk.END, commandOutput)
 
             elif (cm == "get"):
-                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+                commandOutput = get(command, data)
+                self.output_text.insert(tk.END, commandOutput)
 
             elif (cm == "scan"):
-                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+                commandOutput = scan(command, data)
+                self.output_text.insert(tk.END, commandOutput)
 
             elif (cm == "delete"):
-                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
-                
-            elif (cm == "delete_all"):
-                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+                start_time = time.time()
+                commandOutput = ""
 
+                newData, errmsg = delete(command, data)
+
+                if (type(newData) != str):
+                    commandOutput = errmsg
+
+                else: 
+                    data = json.loads(newData)
+
+                    with open(self.db, 'w') as f:
+                        json.dump(data, f, indent= 4)
+
+                    end_time = time.time()
+                    commandOutput+= "\n"
+                    commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+
+                self.output_text.insert(tk.END, commandOutput)
+                
+            elif (cm == "deleteall"):
+                start_time = time.time()
+                commandOutput = ""
+
+                newData, errmsg = deleteAll(command, data)
+
+                if (type(newData) != str):
+                    commandOutput = errmsg
+
+                else: 
+                    data = json.loads(newData)
+
+                    with open(self.db, 'w') as f:
+                        json.dump(data, f, indent= 4)
+
+                    end_time = time.time()
+                    commandOutput+= "\n"
+                    commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+
+                self.output_text.insert(tk.END, commandOutput)
+                
             elif (cm == "count"):
-                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+                commandOutput = countF(command, data)
+                self.output_text.insert(tk.END, commandOutput)
                 
             elif (cm == "truncate"):
-                self.output_text.insert(tk.END, "Es un put: " + cm + " \n")
+                start_time = time.time()
+                commandOutput = ""
+
+                newData, errmsg = truncate(command, data)
+
+                if (type(newData) != str):
+                    commandOutput = errmsg
+
+                else: 
+                    data = json.loads(newData)
+
+                    with open(self.db, 'w') as f:
+                        json.dump(data, f, indent= 4)
+
+                    end_time = time.time()
+                    commandOutput+= "\n"
+                    commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+
+                self.output_text.insert(tk.END, commandOutput)
 
             else:
                 if cm == "clear":
