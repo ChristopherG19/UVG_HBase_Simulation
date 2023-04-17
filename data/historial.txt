@@ -1480,27 +1480,4 @@ Comandos ingresados:
 16/04/2023 16:25:56: count 'EmployeesB'
 16/04/2023 16:28:28: truncate 'office'
 16/04/2023 16:28:34: exit
------------------------
-Comandos ingresados:
-16/04/2023 17:56:20: create 'Employees', 'data', 'data2'
-16/04/2023 17:56:39: exit
------------------------
-Comandos ingresados:
-16/04/2023 17:56:55: create 'Employees', 'data', 'data2'
-16/04/2023 17:59:22: exit
------------------------
-Comandos ingresados:
-16/04/2023 17:59:36: create 'Employees', 'data', 'data2'
-16/04/2023 17:59:44: exit
------------------------
-Comandos ingresados:
-16/04/2023 18:00:07: create 'Employees', 'data', 'data2'
-16/04/2023 18:00:32: exit
------------------------
-Comandos ingresados:
-16/04/2023 18:00:39: create 'Employees', 'data', 'data2'
-16/04/2023 18:00:45: exit
------------------------
-Comandos ingresados:
-16/04/2023 18:00:49: create 'Employees', 'data', 'data2'
-16/04/2023 18:00:54: exit
+

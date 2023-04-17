@@ -84,10 +84,9 @@ def put(command, data):
     data_string = json.dumps(data)
     return (data_string, "")
 
-def get(command, data):
-    start_time = time.time()
+def get(command, data, cantFilas):
+
     ret = ""
-    cantFilas = 0
 
     try:
         # conseguimos los atributos del commando
@@ -95,7 +94,7 @@ def get(command, data):
         command[1]
     
     except:
-        return "get '<table name>', 'row id' \n"
+        return "get '<table name>', 'row id' \n", cantFilas
 
     try:
         arguments = command[1].strip().split(",")
@@ -105,7 +104,7 @@ def get(command, data):
         rowID = arguments[1].strip().strip("'")
 
     except:
-        return "Sintaxis inválida: Argumentos faltantes \n"
+        return "Sintaxis inválida: Argumentos faltantes \n", cantFilas
     
 
     # conseguir region
@@ -119,17 +118,17 @@ def get(command, data):
 
     # Verificar existencia de tabla
     if region == "":
-        return "La tabla no existe\n"
+        return "La tabla no existe\n", cantFilas
 
     # verificar disponilbilidad
     if data[region][tableName]["enabled"] != "True":
-        return "La tabla no está disponible\t"
+        return "La tabla no está disponible\t", cantFilas
     
     # verificar existencia del row
     try:
         data[region][tableName]["rows"][rowID]
     except:
-        return "La row ID ingresada no existe \n"
+        return "La row ID ingresada no existe \n", cantFilas
     
     ret += "COLUMN\t\t\tCELL\n"
     
@@ -141,22 +140,17 @@ def get(command, data):
             ", value=" + data[region][tableName]["rows"][rowID][columnFamily][columnName]["value"] +\
             "\n"
 
-    end_time = time.time()
-    ret+= "\n"
-    ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
-    return ret
+    return ret, cantFilas
 
-def scan(command, data):
-    start_time = time.time()
+def scan(command, data, cantFilas):
     ret = ""
-    cantFilas = 0
 
     try:
         command = command.split(" ")
         tableName = command[1].strip().strip("'")
 
     except:
-        return "scan '<table name>\n"
+        return "scan '<table name>\n", cantFilas
 
     ret += "ROW\t\tCOLUMN+CELL\n"
 
@@ -171,33 +165,33 @@ def scan(command, data):
 
     # Verificar existencia de tabla
     if region == "":
-        return "La tabla no existe\n"
+        return "La tabla no existe\n", cantFilas
 
     # verificar disponilbilidad
     if data[region][tableName]["enabled"] != "True":
-        return "La tabla no está disponible\t"
+        return "La tabla no está disponible\t", cantFilas
     
     rows = "rows"
 
     for fila in data[region][tableName][rows]:
         for columnFamily in data[region][tableName][rows][fila]:
             for columnName in data[region][tableName][rows][fila][columnFamily]:
-                retorno = "" + \
-                str(fila) + \
-                "\t\tColumn=" + \
-                columnFamily + ":" +columnName +\
-                ", timestamp=" + str(data[region][tableName][rows][fila][columnFamily][columnName]["Timestamp"]) +\
-                ", value=" + data[region][tableName][rows][fila][columnFamily][columnName]["value"] +\
-                "\n"
+                
+                # Imprimir solo si la información está completa
+                if "Timestamp" in data[region][tableName][rows][fila][columnFamily][columnName] and \
+                "value" in data[region][tableName][rows][fila][columnFamily][columnName]:
+                    retorno = "" + \
+                    str(fila) + \
+                    "\t\tColumn=" + \
+                    columnFamily + ":" +columnName +\
+                    ", timestamp=" + str(data[region][tableName][rows][fila][columnFamily][columnName]["Timestamp"]) +\
+                    ", value=" + data[region][tableName][rows][fila][columnFamily][columnName]["value"] +\
+                    "\n"
 
-                ret += retorno
+                    ret += retorno
+                    cantFilas += 1
 
-
-
-    end_time = time.time()
-    ret+= "\n"
-    ret += str(cantFilas) + " fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
-    return ret
+    return ret, cantFilas
 
 def delete(command, data):
     
@@ -324,8 +318,7 @@ def deleteAll(command, data):
 
     return (data_string, "")
 
-def countF(command, data):
-    start_time = time.time()
+def countF(command, data, cantFilas):
     ret = ""
 
     try:
@@ -333,7 +326,7 @@ def countF(command, data):
         tableName = command[1].strip().strip("'")
 
     except:
-        return "count '<table name>'\n"
+        return "count '<table name>'\n", cantFilas
     
     # conseguir region
     region = ""
@@ -343,32 +336,23 @@ def countF(command, data):
             if y == tableName:
                 region = x 
 
-
     # Verificar existencia de tabla
     if region == "":
-        return "La tabla no existe\n"
+        return "La tabla no existe\n", cantFilas
 
     # verificar disponilbilidad
     if data[region][tableName]["enabled"] != "True":
-        return "La tabla no está disponible\t"
+        return "La tabla no está disponible\t", cantFilas
     
-    cantData = 0
-    for row in data[region][tableName]["rows"]:
-        for columnFamily in data[region][tableName]["rows"][row]:
-            for columnName in data[region][tableName]["rows"][row][columnFamily]:
-                for value in data[region][tableName]["rows"][row][columnFamily][columnName]:
-                    cantData += 1
+    # contar rows
+    cantData = len(data[region][tableName]["rows"])
 
     ret += "\n" + str(cantData) + "\n"
+    cantFilas = 1
 
+    return ret, cantFilas
 
-    end_time = time.time()
-    ret+= "\n"
-    ret += "1 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
-    return ret
-
-def truncate(command, data):
-    
+def truncateP1_verification(command, data):
     try:
         command = command.split(" ")
         tableName = command[1].strip().strip("'")
@@ -393,9 +377,21 @@ def truncate(command, data):
     if data[region][tableName]["enabled"] != "True":
         return True, "La tabla no está disponible\t"
     
-    # Eliminar info de la tabla
-    del data[region][tableName]
+    return False, (region, tableName)
+
+def truncateP2_reconstruction(data, copy, region, tableName):
+
+    for row in copy["rows"]:
+        for columnFamily in copy["rows"][row]:
+            for columnName in copy["rows"][row][columnFamily]:
+                for info in copy["rows"][row][columnFamily][columnName]:
+                    copy["rows"][row][columnFamily][columnName] = {}
+                        
+    # Volver a agregar la estructura
+    data[region][tableName] = copy
+
 
     data_string = json.dumps(data)
 
-    return (data_string, "")
+    return (data_string)
+
