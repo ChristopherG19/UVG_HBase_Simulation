@@ -381,20 +381,45 @@ class HBaseSimulator:
                 start_time = time.time()
                 commandOutput = ""
 
-                newData, errmsg = truncate(command, data)
+                err, res  = truncateP1_verification(command, data)
 
-                if (type(newData) != str):
-                    commandOutput = errmsg
-
+                if (err and type(res) == str):
+                    # Hubo un error
+                    commandOutput += res 
                     end_time = time.time()
+                else:
+                    # se continúa con en truncate
+                    commandOutput += "Truncando 'una' tabla (puede que tome tiempo)\n"
+                    commandOutput += "\t- Deshabilitando la tabla...\n"
 
-                else: 
-                    data = json.loads(newData)
+                    region = res[0]
+                    nombreTabla = res[1]
 
+                    data[region][nombreTabla]["enabled"] = "False"
+
+                    # reescribir con la tabla deshabilitada
+                    with open(self.db, 'w') as f:
+                        json.dump(data, f, indent= 4)
+
+                    copia = data[region][nombreTabla]
+
+                    # drop tabla
+                    del data[region][nombreTabla]
+
+                    # reescribir con la tabla eliminada
                     with open(self.db, 'w') as f:
                         json.dump(data, f, indent= 4)
 
                     end_time = time.time()
+
+                    commandOutput += "\t- Truncando la tabla...\n"
+                    data = truncateP2_reconstruction(data, copia, region, nombreTabla)
+
+                    data = json.loads(data)
+
+                    # reescribir
+                    with open(self.db, 'w') as f:
+                        json.dump(data, f, indent= 4)
                     
                 commandOutput+= "\n"
                 commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"

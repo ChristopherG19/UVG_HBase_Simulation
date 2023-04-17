@@ -176,16 +176,20 @@ def scan(command, data, cantFilas):
     for fila in data[region][tableName][rows]:
         for columnFamily in data[region][tableName][rows][fila]:
             for columnName in data[region][tableName][rows][fila][columnFamily]:
-                retorno = "" + \
-                str(fila) + \
-                "\t\tColumn=" + \
-                columnFamily + ":" +columnName +\
-                ", timestamp=" + str(data[region][tableName][rows][fila][columnFamily][columnName]["Timestamp"]) +\
-                ", value=" + data[region][tableName][rows][fila][columnFamily][columnName]["value"] +\
-                "\n"
+                
+                # Imprimir solo si la información está completa
+                if "Timestamp" in data[region][tableName][rows][fila][columnFamily][columnName] and \
+                "value" in data[region][tableName][rows][fila][columnFamily][columnName]:
+                    retorno = "" + \
+                    str(fila) + \
+                    "\t\tColumn=" + \
+                    columnFamily + ":" +columnName +\
+                    ", timestamp=" + str(data[region][tableName][rows][fila][columnFamily][columnName]["Timestamp"]) +\
+                    ", value=" + data[region][tableName][rows][fila][columnFamily][columnName]["value"] +\
+                    "\n"
 
-                ret += retorno
-                cantFilas += 1
+                    ret += retorno
+                    cantFilas += 1
 
     return ret, cantFilas
 
@@ -353,8 +357,7 @@ def countF(command, data, cantFilas):
 
     return ret, cantFilas
 
-def truncate(command, data):
-    
+def truncateP1_verification(command, data):
     try:
         command = command.split(" ")
         tableName = command[1].strip().strip("'")
@@ -379,14 +382,23 @@ def truncate(command, data):
     if data[region][tableName]["enabled"] != "True":
         return True, "La tabla no está disponible\t"
     
-    # copiar data
-    copy = data[region][tableName]
+    return False, (region, tableName)
 
-    # Eliminar info de la tabla
-    del data[region][tableName]
+def truncateP2_reconstruction(data, copy, region, tableName):
 
-    # Volver a crear data
+    for row in copy["rows"]:
+        for columnFamily in copy["rows"][row]:
+            for columnName in copy["rows"][row][columnFamily]:
+                for info in copy["rows"][row][columnFamily][columnName]:
+                    copy["rows"][row][columnFamily][columnName] = {}
+                        
+    # Volver a agregar la estructura
+    data[region][tableName] = copy
+
+    # volver a habilitar la tabla
+    data[region][tableName]["enabled"] = "True"
 
     data_string = json.dumps(data)
 
-    return (data_string, "")
+    return (data_string)
+
