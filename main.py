@@ -100,7 +100,7 @@ class HBaseSimulator:
                 n = len(data) + 1
                 nameRegion = "Region"+str(n)
                 start_time = time.time()
-                TableName, newHfile = create(timestamp, command)
+                TableName, newHfile, error = create(timestamp, command, data)
                 if(newHfile != None):
                     data[nameRegion] = newHfile
                     # Actualizar la db
@@ -113,11 +113,18 @@ class HBaseSimulator:
                     result = f"0 row(s) in {tiempo} seconds\n=> Hbase::Table - {TableName}"
                     self.show_results(result)
                 else:
-                    end_time = time.time()
-                    tiempo = end_time - start_time
-                    formato = "Formato: create '<table name>', '<ColumnFamily1>', '<ColumnFamily2>', ..."
-                    result = f"{TableName}\n{formato}\n0 row(s) in {tiempo} seconds"
-                    self.show_results(result)
+                    if(error == "Error"):
+                        end_time = time.time()
+                        tiempo = end_time - start_time
+                        formato = f"ERROR: Tabla {TableName} ya existe, utiliza list para ver tablas existentes"
+                        result = f"{formato}\n0 row(s) in {tiempo} seconds"
+                        self.show_results(result)
+                    else:
+                        end_time = time.time()
+                        tiempo = end_time - start_time
+                        formato = "Formato: create '<table name>', '<ColumnFamily1>', '<ColumnFamily2>', ..."
+                        result = f"{TableName}\n{formato}\n0 row(s) in {tiempo} seconds"
+                        self.show_results(result)
                 #print(json.dumps(newHfile, indent=4))
 
             elif(cm == "list"):
