@@ -1600,3 +1600,7 @@ Comandos ingresados:
 16/04/2023 18:45:04: scan 'EmployeesB'
 16/04/2023 18:45:20: truncate 'EmployeesB'
 16/04/2023 18:45:27: scan 'EmployeesB'
+-----------------------
+Comandos ingresados:
+16/04/2023 18:50:06: count
+16/04/2023 18:50:19: count 'EmployeesB'

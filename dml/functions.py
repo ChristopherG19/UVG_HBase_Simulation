@@ -336,7 +336,6 @@ def countF(command, data, cantFilas):
             if y == tableName:
                 region = x 
 
-
     # Verificar existencia de tabla
     if region == "":
         return "La tabla no existe\n", cantFilas
@@ -345,12 +344,8 @@ def countF(command, data, cantFilas):
     if data[region][tableName]["enabled"] != "True":
         return "La tabla no está disponible\t", cantFilas
     
-    cantData = 0
-    for row in data[region][tableName]["rows"]:
-        for columnFamily in data[region][tableName]["rows"][row]:
-            for columnName in data[region][tableName]["rows"][row][columnFamily]:
-                for value in data[region][tableName]["rows"][row][columnFamily][columnName]:
-                    cantData += 1
+    # contar rows
+    cantData = len(data[region][tableName]["rows"])
 
     ret += "\n" + str(cantData) + "\n"
     cantFilas = 1
