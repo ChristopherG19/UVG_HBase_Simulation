@@ -345,7 +345,28 @@ def countF(command, data, cantFilas):
         return "La tabla no está disponible\t", cantFilas
     
     # contar rows
-    cantData = len(data[region][tableName]["rows"])
+    # cantData = len(data[region][tableName]["rows"])
+    cantData = 0
+    for row in data[region][tableName]["rows"]:
+        dataEmpty = False
+        for colFamily in data[region][tableName]["rows"][row]:
+            if len(data[region][tableName]["rows"][row][colFamily]) == 0:
+                dataEmpty = True
+
+            else:
+                for colName in  data[region][tableName]["rows"][row][colFamily]:
+                    if len(data[region][tableName]["rows"][row][colFamily][colName]) == 0:
+                        dataEmpty = True
+
+                    else:
+                        for info in data[region][tableName]["rows"][row][colFamily][colName]:
+                            try: 
+                                data[region][tableName]["rows"][row][colFamily][colName][info]
+                            except:
+                                dataEmpty = True
+
+        if not dataEmpty:
+            cantData += 1
 
     ret += "\n" + str(cantData) + "\n"
     cantFilas = 1

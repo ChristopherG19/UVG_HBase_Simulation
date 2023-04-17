@@ -1481,3 +1481,118 @@ Comandos ingresados:
 16/04/2023 16:28:28: truncate 'office'
 16/04/2023 16:28:34: exit
 
+-----------------------
+Comandos ingresados:
+16/04/2023 21:38:53: create
+16/04/2023 21:39:00: create 'office', 'data', 'data2'
+16/04/2023 21:39:14: count 'office'
+16/04/2023 21:39:32: truncate EmployeesB
+16/04/2023 21:39:52: count EmployeesB
+-----------------------
+Comandos ingresados:
+16/04/2023 21:41:29: truncate EmployeesB
+16/04/2023 21:41:38: count EmployeesB
+-----------------------
+Comandos ingresados:
+16/04/2023 21:45:48: create
+16/04/2023 21:47:08: create Estudiante, informacion_personal, informacion_de_contacto, informacion_academica 
+-----------------------
+Comandos ingresados:
+16/04/2023 21:48:05: create Estudiante, informacion_personal, informacion_de_contacto, informacion_academica
+16/04/2023 21:48:55: create Estudiante, Informacion_personal, Informacion_de_contacto, Informacion_academica
+16/04/2023 21:50:04: put Estudiante, 1, Informacion_personal:nombre, Giovanni
+-----------------------
+Comandos ingresados:
+16/04/2023 22:47:44: create
+16/04/2023 22:48:26: create 'Company', 'General', 'Locacion', 'Jerarquia'
+16/04/2023 22:48:57: create 'Company', 'General', 'Locacion', 'Jerarquia'
+16/04/2023 22:49:15: create 'Company', 'General', 'Locacion', 'Jerarquia'
+16/04/2023 22:49:22: list
+-----------------------
+Comandos ingresados:
+16/04/2023 22:57:30: describe
+16/04/2023 22:57:35: scan
+16/04/2023 22:57:40: scan Estudiante
+16/04/2023 22:57:56: list
+16/04/2023 22:58:15: scan Company
+16/04/2023 22:58:46: get 
+16/04/2023 22:58:57: clear
+16/04/2023 22:59:00: put
+16/04/2023 22:59:02: get
+16/04/2023 22:59:16: get Estudiante 3
+16/04/2023 22:59:31: get Estudiante, 3
+16/04/2023 22:59:58: truncate
+16/04/2023 23:00:03: clear
+16/04/2023 23:00:06: truncate
+16/04/2023 23:00:14: truncate Estudiante
+16/04/2023 23:00:35: alter
+16/04/2023 23:00:37: clear
+16/04/2023 23:00:37: alter
+16/04/2023 23:01:38: alter 'Estudiante', 'delete' => 'Informacion_personal'
+16/04/2023 23:03:01: alter 'Estudiante', 'ModifyName' => 'Informacion_personal', "IP"
+-----------------------
+Comandos ingresados:
+16/04/2023 23:10:02: alter 'Estudiante', 'ModifyName' => 'Informacion_personal', "IP"
+16/04/2023 23:10:32: drop
+16/04/2023 23:10:45: drop 'Estudiante'
+16/04/2023 23:10:53: disable
+16/04/2023 23:11:00: disable Estudiante
+16/04/2023 23:11:12: is_enabled
+16/04/2023 23:11:26: is_enabled 'Estudiante'
+16/04/2023 23:11:40: drop 'Estudiante'
+-----------------------
+Comandos ingresados:
+16/04/2023 23:12:28: is_enabled
+-----------------------
+Comandos ingresados:
+16/04/2023 23:13:10: is_enabled
+-----------------------
+Comandos ingresados:
+16/04/2023 23:13:33: is_enabled
+16/04/2023 23:13:45: is_enabled 'Estudiante'
+16/04/2023 23:14:16: enable 'Estudiante'
+16/04/2023 23:14:29: delete
+16/04/2023 23:15:05: delete Estudiante, 1, Informacion_personal:Nombre
+16/04/2023 23:15:22: describe
+16/04/2023 23:15:26: describe Estudiante
+-----------------------
+Comandos ingresados:
+16/04/2023 23:16:49: describe Estudiante
+-----------------------
+Comandos ingresados:
+16/04/2023 23:19:24:  describe Estudiante
+16/04/2023 23:19:33: describe Estudiante
+-----------------------
+Comandos ingresados:
+16/04/2023 23:21:05: describe Estudiante
+16/04/2023 23:21:17: count Estudiante
+16/04/2023 23:21:30: count
+-----------------------
+Comandos ingresados:
+16/04/2023 23:24:11: count Estudiante
+-----------------------
+Comandos ingresados:
+16/04/2023 23:27:41: count Estudiante
+-----------------------
+Comandos ingresados:
+16/04/2023 23:28:55: describe Estudiante
+-----------------------
+Comandos ingresados:
+16/04/2023 23:29:48: describe Estudiante
+-----------------------
+Comandos ingresados:
+16/04/2023 23:30:48: describe Estudiante
+-----------------------
+Comandos ingresados:
+16/04/2023 23:32:33: describe Estudiante
+16/04/2023 23:32:59: truncate Estudiante
+16/04/2023 23:33:05: describe Estudiante
+16/04/2023 23:34:08: drop_all
+16/04/2023 23:35:01: drop_all '^Estudiante$'
+16/04/2023 23:35:42: drop_all '^Estudiante$'
+16/04/2023 23:36:04: drop_all '^Estudiante$'
+16/04/2023 23:36:38: clear
+16/04/2023 23:36:45: deleteall
+16/04/2023 23:36:58: delete Estudiante 1
+16/04/2023 23:37:09: deleteall Estudiante, 1
+16/04/2023 23:37:22: count Company

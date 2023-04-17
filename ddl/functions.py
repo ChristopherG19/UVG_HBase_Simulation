@@ -111,10 +111,10 @@ def enableTable(Hfiles, command, timestamp):
                     return ("Already enabled", TableName, Hfiles)
 
 def checkStatus(Hfiles, command):
-    if(not exists(Hfiles, command)):
-        return "Table not found, no changes"
-    
     TableName = get_info(command)[0]
+    if(not exists(Hfiles, command)):
+        return ("Table not found, no changes", TableName)
+    
     if(TableName == None):
         return (get_info(command)[1], TableName)
     
@@ -161,7 +161,7 @@ def alterTable(Hfiles, command, timestamp):
                                 tempInfo = [x.strip() for x in ActionAndInfo[1].split(",")]
                                 if column_family == tempInfo[0]:
                                     Hfiles[region][table]["rows"][row_key][tempInfo[1]] = Hfiles[region][table]["rows"][row_key].pop(column_family)
-                                    return (Hfiles, ActionAndInfo[0], tempInfo[0], TableName, tempInfo[1])
+                    return (Hfiles, ActionAndInfo[0], tempInfo[0], TableName, tempInfo[1])
                 else:
                     return (Hfiles, "disabled", None, TableName, None)
                                 
@@ -214,10 +214,10 @@ def dropAll(Hfiles, command):
                     del Hfiles[region]
                 return (f"{len(coincidences)} tables successfully dropped", Hfiles, "Ok")
             else:
-                print("Cancelando operacion")
+                messagebox.showinfo("Informacion", "Cancelando operacion")
                 return ("No changes", Hfiles, "Ok")
         else:
-            print("Cancelando operacion")
+            messagebox.showinfo("Informacion", "Cancelando operacion")
             return ("No changes", Hfiles, "Ok")
     else:
         return ("No hay coincidencias", Hfiles, "Ok")
@@ -234,7 +234,39 @@ def describe(Hfiles, command):
     HfileT = get_table(Hfiles, command)
     status = ""
     columnFnames = set()
-    countRows = 0
+
+    cantData = 0
+
+    # conseguir region
+    region = ""
+
+    for x in Hfiles:
+        for y in Hfiles[x]:
+            if y == TableName:
+                region = x 
+
+    for row in Hfiles[region][TableName]["rows"]:
+        dataEmpty = False
+        for colFamily in Hfiles[region][TableName]["rows"][row]:
+            if len(Hfiles[region][TableName]["rows"][row][colFamily]) == 0:
+                dataEmpty = True
+
+            else:
+                for colName in Hfiles[region][TableName]["rows"][row][colFamily]:
+                    if len(Hfiles[region][TableName]["rows"][row][colFamily][colName]) == 0:
+                        dataEmpty = True
+
+                    else:
+                        for info in Hfiles[region][TableName]["rows"][row][colFamily][colName]:
+                            try: 
+                                Hfiles[region][TableName]["rows"][row][colFamily][colName][info]
+                            except:
+                                dataEmpty = True
+
+        if not dataEmpty:
+            cantData += 1
+            
+
     for table in HfileT:
         for property in HfileT[table]:
             if HfileT[table]["enabled"] == "True":
@@ -242,10 +274,6 @@ def describe(Hfiles, command):
             else:
                 status = "DISABLED"
             for row in HfileT[table]["rows"]:
-                if row == '0':
-                    countRows = 0
-                else:
-                    countRows = len(HfileT[table]["rows"])
                 for value in HfileT[table]["rows"][row]:
                     columnFnames.add(value)
     columnFnames = list(columnFnames)
@@ -254,5 +282,5 @@ def describe(Hfiles, command):
     for column in columnFnames:
         column_info += f"{{NAME => '{column}', DATA_BLOCK_ENCODING => 'NONE', BLOOMFILTER => 'ROW', REPLICATION_SCOPE => '0', VERSIONS => '1', COMPRESSION => 'NONE', MIN_VERSIONS => '0', TTL => 'FOREVER', KEEP_DELETED_CELLS => 'FALSE', BLOCKSIZE => '65536', IN_MEMORY => 'false', BLOCKCACHE => 'true'}}\n"
 
-    return (f"Table {TableName} is {status}\n{TableName}\nCOLUMN FAMILIES DESCRIPTION\n{column_info}", countRows, TableName)
+    return (f"Table {TableName} is {status}\n{TableName}\nCOLUMN FAMILIES DESCRIPTION\n{column_info}", cantData, TableName)
     
