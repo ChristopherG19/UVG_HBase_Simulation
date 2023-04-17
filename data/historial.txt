@@ -1596,3 +1596,44 @@ Comandos ingresados:
 16/04/2023 23:36:58: delete Estudiante 1
 16/04/2023 23:37:09: deleteall Estudiante, 1
 16/04/2023 23:37:22: count Company
+-----------------------
+Comandos ingresados:
+17/04/2023 11:25:45: create 'office', 'dataDummy', 'dataDummy2'
+17/04/2023 11:26:09: alter 'office', 'delete' => 'dataDummy'
+17/04/2023 11:27:39: exit
+-----------------------
+Comandos ingresados:
+17/04/2023 11:27:56: alter 'office', 'delete' => 'dataDummy'
+-----------------------
+Comandos ingresados:
+17/04/2023 11:29:22: alter 'office', 'delete' => 'dataDummy'
+-----------------------
+Comandos ingresados:
+17/04/2023 11:30:04: alter 'office', 'delete' => 'dataDummy'
+-----------------------
+Comandos ingresados:
+17/04/2023 11:32:13: create 'office', 'dataDummy', 'dataDummy2'
+17/04/2023 11:32:26: alter 'office', 'delete' => 'dataDummy'
+-----------------------
+Comandos ingresados:
+17/04/2023 11:33:28: alter 'office', 'delete' => 'dataDummy'
+-----------------------
+Comandos ingresados:
+17/04/2023 11:33:43: alter 'office', 'delete' => 'dataDummy'
+-----------------------
+Comandos ingresados:
+17/04/2023 11:34:50: alter 'office', 'delete' => 'dataDummy'
+17/04/2023 11:35:33: exit
+-----------------------
+Comandos ingresados:
+17/04/2023 11:35:42: alter 'office', 'delete' => 'dataDummy'
+17/04/2023 11:36:02: exit
+-----------------------
+Comandos ingresados:
+17/04/2023 11:36:12: alter 'office', 'delete' => 'dataDummy'
+17/04/2023 11:36:17: exit
+-----------------------
+Comandos ingresados:
+17/04/2023 11:37:12: create 'office', 'dataDummy', 'dataDummy2'
+17/04/2023 11:37:43: alter 'office', 'ModifyName' => 'dataDummy', 'data2'
+17/04/2023 11:37:50: exit

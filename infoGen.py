@@ -210,5 +210,5 @@ def fill_Hfiles_company(filepath, fp):
     with open(fp, 'w') as f:
         json.dump(data, f, indent= 4)
 
-# fill_Hfiles('./data/MOCK_DATA_estudiantes.json', './data/Hfile.json')
-fill_Hfiles_company('./data/MOCK_DATA_company.json', './data/Hfile.json')
+# fill_Hfiles('./data/MOCK_DATA_estudiantes.json', './data/Hfiles.json')
+fill_Hfiles_company('./data/MOCK_DATA_company.json', './data/Hfiles.json')

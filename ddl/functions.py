@@ -153,10 +153,13 @@ def alterTable(Hfiles, command, timestamp):
                 if "enabled" in Hfiles[region][table] and Hfiles[region][table]["enabled"] == "True":
                     Hfiles[region][table]["timestamp"] = timestamp
                     for row_key, row_value in list(Hfiles[region][table]["rows"].items()):
+                        tempInfo = [None, None]
                         for column_family, cfv in list(row_value.items()):
                             if ActionAndInfo[0] == "delete":
                                 if column_family == ActionAndInfo[1]:
+                                    tempInfo = [column_family, None]
                                     del Hfiles[region][table]["rows"][row_key][column_family]
+                                
                             elif ActionAndInfo[0] == "ModifyName":
                                 tempInfo = [x.strip() for x in ActionAndInfo[1].split(",")]
                                 if column_family == tempInfo[0]:
