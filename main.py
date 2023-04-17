@@ -385,12 +385,19 @@ class HBaseSimulator:
 
                 if (err and type(res) == str):
                     # Hubo un error
-                    commandOutput += res 
+                    cmd = res 
+                    self.show_results(cmd)
                     end_time = time.time()
+                    cmd = "\n"
+                    cmd += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+                    self.show_results(cmd)
+
                 else:
                     # se continúa con en truncate
-                    commandOutput += "Truncando 'una' tabla (puede que tome tiempo)\n"
-                    commandOutput += "\t- Deshabilitando la tabla...\n"
+                    cmd = "Truncando 'una' tabla (puede que tome tiempo)\n"
+                    self.show_results(cmd)
+                    cmd = "\t- Deshabilitando la tabla...\n"
+                    self.show_results(cmd)
 
                     region = res[0]
                     nombreTabla = res[1]
@@ -404,6 +411,9 @@ class HBaseSimulator:
                     copia = data[region][nombreTabla]
 
                     # drop tabla
+                    cmd = "\t- Eliminando la tabla...\n"
+                    self.show_results(cmd)
+
                     del data[region][nombreTabla]
 
                     # reescribir con la tabla eliminada
@@ -412,18 +422,29 @@ class HBaseSimulator:
 
                     end_time = time.time()
 
-                    commandOutput += "\t- Truncando la tabla...\n"
-                    data = truncateP2_reconstruction(data, copia, region, nombreTabla)
+                    cmd = "\t- Truncando la tabla...\n"
+                    self.show_results(cmd)
 
+                    data = truncateP2_reconstruction(data, copia, region, nombreTabla)
                     data = json.loads(data)
 
                     # reescribir
                     with open(self.db, 'w') as f:
                         json.dump(data, f, indent= 4)
+
+                    # volver a habilitar la tabla
+                    cmd = "\t- Rehabilitando la tabla...\n"
+                    self.show_results(cmd)
+
+                    data[region][nombreTabla]["enabled"] = "True"
+
+                    # reescribir
+                    with open(self.db, 'w') as f:
+                        json.dump(data, f, indent= 4)
                     
-                commandOutput+= "\n"
-                commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
-                self.show_results(commandOutput)
+                    commandOutput = "\n"
+                    commandOutput += "0 fila(s) en " + format(end_time - start_time, ".4f") + " segundos \n"
+                    self.show_results(commandOutput)
 
             else:
                 if cm == "clear":

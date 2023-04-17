@@ -390,8 +390,6 @@ def truncateP2_reconstruction(data, copy, region, tableName):
     # Volver a agregar la estructura
     data[region][tableName] = copy
 
-    # volver a habilitar la tabla
-    data[region][tableName]["enabled"] = "True"
 
     data_string = json.dumps(data)
 

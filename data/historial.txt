@@ -1604,3 +1604,29 @@ Comandos ingresados:
 Comandos ingresados:
 16/04/2023 18:50:06: count
 16/04/2023 18:50:19: count 'EmployeesB'
+-----------------------
+Comandos ingresados:
+-----------------------
+Comandos ingresados:
+16/04/2023 19:07:14: truncate 'EmployeesB'
+-----------------------
+Comandos ingresados:
+16/04/2023 19:07:40: scan 'EmployeesB'
+16/04/2023 19:07:49: truncate 'EmployeesB'
+16/04/2023 19:07:55: scan 'EmployeesB'
+-----------------------
+Comandos ingresados:
+16/04/2023 19:14:14: truncate
+-----------------------
+Comandos ingresados:
+16/04/2023 19:14:42: truncate
+-----------------------
+Comandos ingresados:
+16/04/2023 19:15:00: truncate
+-----------------------
+Comandos ingresados:
+16/04/2023 19:15:33: truncate
+16/04/2023 19:15:42: truncate 'EmployeesB'
+-----------------------
+Comandos ingresados:
+16/04/2023 19:16:15: truncate 'EmployeesB'
