@@ -43,24 +43,28 @@ def exists(Hfiles, command):
         exist = True
     return exist
 
-def create(timestamp, command):
+def create(timestamp, command, Hfiles):
     try:
         infoValues = command.split(" ", 1)[1]
         dataInfo = infoValues.split(",", 1)
         TableName = dataInfo[0].replace("'", "")
         ColumnFamilies = dataInfo[1].strip().replace("'", "").replace('"', '').split(",")
         if((len(ColumnFamilies) == 1 and ColumnFamilies[0] == '') or any(x == " " for x in ColumnFamilies)):
-            return ("Sintaxis inválida: Argumentos faltantes", None)
+            return ("Sintaxis inválida: Argumentos faltantes", None, "Fallo")
     except:
-        return ("Sintaxis inválida: Argumentos faltantes", None)
+        return ("Sintaxis inválida: Argumentos faltantes", None, "Fallo")
     
     newRow = {}
     for columnF in ColumnFamilies: newRow[columnF.strip()] = {}
         
     newHFile = { "enabled": "True", "timestamp": timestamp, "rows": {"0": newRow}}
+    
+    if(exists(Hfiles, command)):
+        return(TableName, None, "Error")
+    
     new_Region = {TableName: newHFile}
 
-    return (TableName, new_Region)
+    return (TableName, new_Region, None)
     
 def listTables(Hfiles):
     table_names = []
